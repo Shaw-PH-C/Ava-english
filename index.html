@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ava 英文能力升級計畫 - Day 1</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        h1 {
+            font-size: 20px;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #7f8c8d;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 16px;
+            color: #2980b9;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+        ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+        li {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        .formula-box {
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 15px;
+            margin: 15px 0;
+        }
+        .task-box {
+            background: #fff9e6;
+            border: 1px dashed #f1c40f;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+            margin-top: 8px;
+            resize: none;
+        }
+        button {
+            width: 100%;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #219653;
+        }
+        #resultMsg {
+            margin-top: 12px;
+            text-align: center;
+            font-weight: bold;
+            color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🏨 Ava 英文能力升級計畫</h1>
+    <div class="subtitle">Day 1：海外飯店突發狀況 ✈️</div>
+
+    <div class="section-title">📚 今日 5 大核心單字</div>
+    <ul>
+        <li><b>Air conditioner</b> - 空調 / 冷氣</li>
+        <li><b>Shower</b> - 淋浴設備 / 熱水</li>
+        <li><b>Light</b> - 燈光</li>
+        <li><b>TV</b> - 電視</li>
+        <li><b>Wi-Fi</b> - 網路</li>
+    </ul>
+
+    <div class="section-title">🗣️ 今日黃金句型</div>
+    <div class="formula-box">
+        <b>"Excuse me, the [單字] in my room isn't working."</b><br>
+        <span style="font-size: 13px; color: #555;">(不好意思，我房間裡的 [單字] 故障不能用了。)</span>
+    </div>
+
+    <div class="task-box">
+        <div style="font-weight: bold; color: #d35400;">🎯 互動小任務</div>
+        <p style="font-size: 14px; margin: 5px 0 10px 0;">請從上方選 2 個單字套用句型，寫出兩個句子，並點擊送出：</p>
+        <textarea id="userAnswer" placeholder="例如：
+Excuse me, the Wi-Fi in my room isn't working.
+Excuse me, the TV in my room isn't working."></textarea>
+        <button onclick="submitTask()">送出任務完成打卡 🎉</button>
+        <div id="resultMsg"></div>
+    </div>
+</div>
+
+<script>
+    function submitTask() {
+        const answer = document.getElementById('userAnswer').value.trim();
+        const msg = document.getElementById('resultMsg');
+        if(answer.length < 5) {
+            msg.style.color = '#c0392b';
+            msg.innerText = "請至少輸入兩個完整的句子再送出喔！";
+        } else {
+            msg.style.color = '#27ae60';
+            msg.innerText = "太棒了！今日任務已成功解鎖！記得截圖或複製傳給主管檢查喔！👏";
+        }
+    }
+</script>
+
+</body>
+</html>

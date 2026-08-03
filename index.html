@@ -78,7 +78,7 @@
         }
         button {
             width: 100%;
-            background-color: #27ae60;
+            background-color: #06c755; /* Line 綠色 */
             color: white;
             border: none;
             padding: 12px;
@@ -90,13 +90,14 @@
             transition: background 0.2s;
         }
         button:hover {
-            background-color: #219653;
+            background-color: #05b34c;
         }
         #resultMsg {
             margin-top: 12px;
             text-align: center;
             font-weight: bold;
-            color: #e67e22;
+            color: #c0392b;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -122,27 +123,34 @@
     </div>
 
     <div class="task-box">
-        <div style="font-weight: bold; color: #d35400;">🎯 互動小任務</div>
-        <p style="font-size: 14px; margin: 5px 0 10px 0;">請從上方選 2 個單字套用句型，寫出兩個句子，並點擊送出：</p>
+        <div style="font-weight: bold; color: #d35400;">🎯 Line 打卡小任務</div>
+        <p style="font-size: 14px; margin: 5px 0 10px 0;">請輸入你造的兩個句子，點擊按鈕直接傳送到 Line：</p>
         <textarea id="userAnswer" placeholder="例如：
-Excuse me, the Wi-Fi in my room isn't working.
-Excuse me, the TV in my room isn't working."></textarea>
-        <button onclick="submitTask()">送出任務完成打卡 🎉</button>
+1. Excuse me, the Wi-Fi in my room isn't working.
+2. Excuse me, the TV in my room isn't working."></textarea>
+        <button onclick="sendToLine()">📲 一鍵發送 Line 打卡</button>
         <div id="resultMsg"></div>
     </div>
 </div>
 
 <script>
-    function submitTask() {
+    function sendToLine() {
         const answer = document.getElementById('userAnswer').value.trim();
         const msg = document.getElementById('resultMsg');
+        
         if(answer.length < 5) {
-            msg.style.color = '#c0392b';
             msg.innerText = "請至少輸入兩個完整的句子再送出喔！";
-        } else {
-            msg.style.color = '#27ae60';
-            msg.innerText = "太棒了！今日任務已成功解鎖！記得截圖或複製傳給主管檢查喔！👏";
+            return;
         }
+        
+        msg.innerText = "";
+        
+        // 組合要傳送的 Line 文字訊息
+        const textMessage = `【Ava 英文打卡 Day 1】\n${answer}`;
+        
+        // 開啟 Line 分享介面
+        const lineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(textMessage)}`;
+        window.location.href = lineUrl;
     }
 </script>
 

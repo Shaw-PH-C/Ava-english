@@ -47,8 +47,22 @@
             margin: 5px 0;
         }
         li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-size: 15px;
+        }
+        .audio-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 2px 8px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-left: 5px;
+            transition: background 0.2s;
+        }
+        .audio-btn:hover {
+            background-color: #2980b9;
         }
         .formula-box {
             background: #e8f4f8;
@@ -95,7 +109,7 @@
             margin-top: 8px;
             resize: none;
         }
-        button {
+        button.submit-btn {
             width: 100%;
             background-color: #06c755;
             color: white;
@@ -108,7 +122,7 @@
             margin-top: 15px;
             transition: background 0.2s;
         }
-        button:hover {
+        button.submit-btn:hover {
             background-color: #05b34c;
         }
         #resultMsg {
@@ -125,21 +139,40 @@
     <h1>🏨 Ava 英文能力升級計畫</h1>
     <div class="subtitle">Day 4：寄放行李與延遲退房 (Luggage & Checkout) ✈️</div>
 
-    <div class="section-title">📚 今日 5 大核心單字</div>
+    <div class="section-title">📚 今日 5 大核心單字（點擊 🔊 聽發音）</div>
     <ul>
-        <li><b>Luggage</b> - 行李</li>
-        <li><b>Leave</b> - 放置 / 離開</li>
-        <li><b>Late</b> - 遲的 / 晚的</li>
-        <li><b>Checkout</b> - 退房</li>
-        <li><b>Possible</b> - 可能的</li>
+        <li>
+            <b>Luggage</b> (行李)
+            <button class="audio-btn" onclick="speakText('Luggage')">🔊 讀音</button>
+        </li>
+        <li>
+            <b>Leave</b> (放置 / 寄放)
+            <button class="audio-btn" onclick="speakText('Leave')">🔊 讀音</button>
+        </li>
+        <li>
+            <b>Late</b> (晚的 / 遲的)
+            <button class="audio-btn" onclick="speakText('Late')">🔊 讀音</button>
+        </li>
+        <li>
+            <b>Checkout</b> (退房)
+            <button class="audio-btn" onclick="speakText('Checkout')">🔊 讀音</button>
+        </li>
+        <li>
+            <b>Possible</b> (可能的)
+            <button class="audio-btn" onclick="speakText('Possible')">🔊 讀音</button>
+        </li>
     </ul>
 
     <div class="section-title">🗣️ 今日黃金句型</div>
     <div class="formula-box">
-        <b>1. "Could I leave my luggage here for a few hours?"</b><br>
-        <span style="font-size: 13px; color: #555;">(我可以把行李寄放在這裡幾個小時嗎？)</span><br><br>
-        <b>2. "Is it possible to have a late checkout?"</b><br>
-        <span style="font-size: 13px; color: #555;">(有可能可以延遲退房嗎？)</span>
+        <b>1. "Could I leave my luggage here for a few hours?"</b>
+        <button class="audio-btn" style="float: right;" onclick="speakText('Could I leave my luggage here for a few hours?')">🔊 聽整句</button><br>
+        <span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">(我可以把行李寄放在這裡幾個小時嗎？)</span>
+    </div>
+    <div class="formula-box" style="margin-top: 10px;">
+        <b>2. "Is it possible to have a late checkout?"</b>
+        <button class="audio-btn" style="float: right;" onclick="speakText('Is it possible to have a late checkout?')">🔊 聽整句</button><br>
+        <span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">(有可能可以延遲退房嗎？)</span>
     </div>
 
     <div class="section-title">📝 記憶小測驗（共 5 題）</div>
@@ -200,12 +233,25 @@
         <textarea id="userAnswer" placeholder="例如：
 Could I leave my luggage here for a few hours?"></textarea>
         
-        <button onclick="sendToLine()">✅ 檢查測驗並一鍵 Line 打卡</button>
+        <button class="submit-btn" onclick="sendToLine()">✅ 檢查測驗並一鍵 Line 打卡</button>
         <div id="resultMsg"></div>
     </div>
 </div>
 
 <script>
+    // 瀏覽器內建發音朗讀函數
+    function speakText(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.85;
+            window.speechSynthesis.speak(utterance);
+        } else {
+            alert("您的裝置或瀏覽器不支援語音朗讀功能");
+        }
+    }
+
     function sendToLine() {
         const msg = document.getElementById('resultMsg');
         

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ava 英文能力升級計畫 - Day 4</title>
+    <title>Ava 英文能力升級計畫 - Day 5</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -32,6 +32,17 @@
             font-size: 14px;
             color: #7f8c8d;
             text-align: center;
+            margin-bottom: 10px;
+        }
+        .streak-badge {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            text-align: center;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
             margin-bottom: 20px;
         }
         .section-title {
@@ -137,101 +148,98 @@
 
 <div class="container">
     <h1>🏨 Ava 英文能力升級計畫</h1>
-    <div class="subtitle">Day 4：寄放行李與延遲退房 (Luggage & Checkout) ✈️</div>
+    <div class="subtitle">Day 5：帳單金額有誤 (Billing Issue) ✈️</div>
+
+    <div class="streak-badge" id="streakDisplay">🔥 目前連續打卡計算中...</div>
 
     <div class="section-title">📚 今日 5 大核心單字（點擊 🔊 聽發音）</div>
     <ul>
         <li>
-            <b>Luggage</b> (行李)
-            <button class="audio-btn" onclick="speakText('Luggage')">🔊 讀音</button>
+            <b>Bill</b> (帳單)
+            <button class="audio-btn" onclick="speakText('Bill')">🔊 讀音</button>
         </li>
         <li>
-            <b>Leave</b> (放置 / 寄放)
-            <button class="audio-btn" onclick="speakText('Leave')">🔊 讀音</button>
+            <b>Mistake</b> (錯誤)
+            <button class="audio-btn" onclick="speakText('Mistake')">🔊 讀音</button>
         </li>
         <li>
-            <b>Late</b> (晚的 / 遲的)
-            <button class="audio-btn" onclick="speakText('Late')">🔊 讀音</button>
+            <b>Minibar</b> (迷你吧)
+            <button class="audio-btn" onclick="speakText('Minibar')">🔊 讀音</button>
         </li>
         <li>
-            <b>Checkout</b> (退房)
-            <button class="audio-btn" onclick="speakText('Checkout')">🔊 讀音</button>
+            <b>Charge</b> (費用)
+            <button class="audio-btn" onclick="speakText('Charge')">🔊 讀音</button>
         </li>
         <li>
-            <b>Possible</b> (可能的)
-            <button class="audio-btn" onclick="speakText('Possible')">🔊 讀音</button>
+            <b>Check</b> (檢查 / 核對)
+            <button class="audio-btn" onclick="speakText('Check')">🔊 讀音</button>
         </li>
     </ul>
 
     <div class="section-title">🗣️ 今日黃金句型</div>
     <div class="formula-box">
-        <b>1. "Could I leave my luggage here for a few hours?"</b>
-        <button class="audio-btn" style="float: right;" onclick="speakText('Could I leave my luggage here for a few hours?')">🔊 聽整句</button><br>
-        <span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">(我可以把行李寄放在這裡幾個小時嗎？)</span>
-    </div>
-    <div class="formula-box" style="margin-top: 10px;">
-        <b>2. "Is it possible to have a late checkout?"</b>
-        <button class="audio-btn" style="float: right;" onclick="speakText('Is it possible to have a late checkout?')">🔊 聽整句</button><br>
-        <span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">(有可能可以延遲退房嗎？)</span>
+        <b>"Excuse me, I think there's a mistake on my bill. I didn't use the minibar."</b>
+        <button class="audio-btn" style="float: right;" onclick="speakText('Excuse me, I think there is a mistake on my bill. I did not use the minibar.')">🔊 聽整句</button><br>
+        <span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">(不好意思，我覺得我的帳單有錯誤。我沒有使用迷你吧。)</span>
     </div>
 
     <div class="section-title">📝 記憶小測驗（共 5 題）</div>
 
     <!-- 題目 1 -->
     <div class="quiz-box">
-        <div class="question">1. 「行李」的英文單字是？</div>
+        <div class="question">1. 飯店的「帳單」英文單字是？</div>
         <div class="options" id="q1">
-            <label><input type="radio" name="q1" value="A"> A. Luggage</label>
-            <label><input type="radio" name="q1" value="B"> B. Ticket</label>
-            <label><input type="radio" name="q1" value="C"> C. Passport</label>
+            <label><input type="radio" name="q1" value="A"> A. Bill</label>
+            <label><input type="radio" name="q1" value="B"> B. Book</label>
+            <label><input type="radio" name="q1" value="C"> C. Bag</label>
         </div>
     </div>
 
     <!-- 題目 2 -->
     <div class="quiz-box">
-        <div class="question">2. 當你想問「延遲退房」，英文是？</div>
+        <div class="question">2. 當你想表達帳單有「錯誤」，應該用哪個單字？</div>
         <div class="options" id="q2">
-            <label><input type="radio" name="q2" value="A"> A. Early check-in</label>
-            <label><input type="radio" name="q2" value="B"> B. Late checkout</label>
-            <label><input type="radio" name="q2" value="C"> C. Fast booking</label>
+            <label><input type="radio" name="q2" value="A"> A. Success</label>
+            <label><input type="radio" name="q2" value="B"> B. Mistake</label>
+            <label><input type="radio" name="q2" value="C"> C. Perfect</label>
         </div>
     </div>
 
     <!-- 題目 3 -->
     <div class="quiz-box">
-        <div class="question">3. 「Is it possible to...」在句型中的意思是？</div>
+        <div class="question">3. 飯店房間內的冰箱零食與飲料區，英文通常稱作？</div>
         <div class="options" id="q3">
-            <label><input type="radio" name="q3" value="A"> A. ...是不可能的嗎？</label>
-            <label><input type="radio" name="q3" value="B"> B. ...有可能嗎？ / 可以...嗎？</label>
-            <label><input type="radio" name="q3" value="C"> C. 誰可以...</label>
+            <label><input type="radio" name="q3" value="A"> A. Minibar</label>
+            <label><input type="radio" name="q3" value="B"> B. Kitchen</label>
+            <label><input type="radio" name="q3" value="C"> C. Coffee shop</label>
         </div>
     </div>
 
     <!-- 題目 4 -->
     <div class="quiz-box">
-        <div class="question">4. 如果想表達「把行李寄放幾小時」，動詞應該用哪個？</div>
+        <div class="question">4. 請問「I didn't use...」的意思是？</div>
         <div class="options" id="q4">
-            <label><input type="radio" name="q4" value="A"> A. Take</label>
-            <label><input type="radio" name="q4" value="B"> B. Make</label>
-            <label><input type="radio" name="q4" value="C"> C. Leave</label>
+            <label><input type="radio" name="q4" value="A"> A. 我想要使用...</label>
+            <label><input type="radio" name="q4" value="B"> B. 我沒有使用...</label>
+            <label><input type="radio" name="q4" value="C"> C. 你可以幫我用...</label>
         </div>
     </div>
 
     <!-- 題目 5 -->
     <div class="quiz-box">
-        <div class="question">5. 請問「a few hours」的意思是？</div>
+        <div class="question">5. 向櫃檯反應帳單有誤時，開頭的第一句話最適合用？</div>
         <div class="options" id="q5">
-            <label><input type="radio" name="q5" value="A"> A. 幾個小時</label>
-            <label><input type="radio" name="q5" value="B"> B. 幾天</label>
-            <label><input type="radio" name="q5" value="C"> C. 幾分鐘</label>
+            <label><input type="radio" name="q5" value="A"> A. You are wrong.</label>
+            <label><input type="radio" name="q5" value="B"> B. Give me money.</label>
+            <label><input type="radio" name="q5" value="C"> C. Excuse me, I think there's a mistake...</label>
         </div>
     </div>
 
     <div class="task-box">
         <div style="font-weight: bold; color: #d35400;">🎯 句型造句挑戰</div>
-        <p style="font-size: 14px; margin: 5px 0 5px 0;">請嘗試寫出寄放行李或延遲退房的句子：</p>
+        <p style="font-size: 14px; margin: 5px 0 5px 0;">請嘗試完整寫出今天學到的帳單有誤反應句子：</p>
         <textarea id="userAnswer" placeholder="例如：
-Could I leave my luggage here for a few hours?"></textarea>
+Excuse me, I think there's a mistake on my bill. I didn't use the minibar."></textarea>
         
         <button class="submit-btn" onclick="sendToLine()">✅ 檢查測驗並一鍵 Line 打卡</button>
         <div id="resultMsg"></div>
@@ -239,6 +247,30 @@ Could I leave my luggage here for a few hours?"></textarea>
 </div>
 
 <script>
+    // 計算連續打卡天數
+    let currentStreak = 1;
+    function checkStreak() {
+        const lastCheckDate = localStorage.getItem('ava_last_check_date');
+        const storedStreak = parseInt(localStorage.getItem('ava_streak_count')) || 0;
+        const today = new Date().toISOString().slice(0, 10);
+        
+        const yesterdayDate = new Date();
+        yesterdayDate.setDate(yesterdayDate.getDate() - 1);
+        const yesterday = yesterdayDate.toISOString().slice(0, 10);
+
+        if (lastCheckDate === today) {
+            currentStreak = storedStreak > 0 ? storedStreak : 1;
+        } else if (lastCheckDate === yesterday) {
+            currentStreak = storedStreak > 0 ? storedStreak : 1;
+        } else {
+            currentStreak = 1;
+        }
+        
+        document.getElementById('streakDisplay').innerText = `🔥 目前已連續打卡： ${currentStreak} 天！`;
+    }
+
+    checkStreak();
+
     // 瀏覽器內建發音朗讀函數
     function speakText(text) {
         if ('speechSynthesis' in window) {
@@ -258,9 +290,9 @@ Could I leave my luggage here for a few hours?"></textarea>
         const answers = {
             q1: 'A',
             q2: 'B',
-            q3: 'B',
-            q4: 'C',
-            q5: 'A'
+            q3: 'A',
+            q4: 'B',
+            q5: 'C'
         };
         
         let score = 0;
@@ -294,11 +326,34 @@ Could I leave my luggage here for a few hours?"></textarea>
             msg.innerText = "請在下方寫出你的造句練習再送出喔！";
             return;
         }
+
+        // 更新打卡紀錄與連續天數
+        const today = new Date().toISOString().slice(0, 10);
+        const lastCheckDate = localStorage.getItem('ava_last_check_date');
+        const storedStreak = parseInt(localStorage.getItem('ava_streak_count')) || 1;
+        
+        const yesterdayDate = new Date();
+        yesterdayDate.setDate(yesterdayDate.getDate() - 1);
+        const yesterday = yesterdayDate.toISOString().slice(0, 10);
+
+        if (lastCheckDate !== today) {
+            if (lastCheckDate === yesterday) {
+                currentStreak = storedStreak + 1;
+            } else if (!lastCheckDate) {
+                currentStreak = 1;
+            } else {
+                currentStreak = 1;
+            }
+            localStorage.setItem('ava_streak_count', currentStreak);
+            localStorage.setItem('ava_last_check_date', today);
+        } else {
+            currentStreak = storedStreak;
+        }
         
         msg.style.color = '#27ae60';
-        msg.innerText = `測驗完成！得分：${score} 分！即將為您打開 Line 傳送成績...`;
+        msg.innerText = `測驗完成！得分：${score} 分！連續打卡 ${currentStreak} 天！即將開啟 Line...`;
         
-        const lineMessage = `【Ava 英文打卡 Day 4】\n🎯 選擇題得分：${score} 分\n✍️ 造句練習：\n${answerText}`;
+        const lineMessage = `【Ava 英文打卡 Day 5】\n🔥 連續打卡：第 ${currentStreak} 天\n🎯 選擇題得分：${score} 分\n✍️ 造句練習：\n${answerText}`;
         
         setTimeout(() => {
             const lineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(lineMessage)}`;

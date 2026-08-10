@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ava 英文能力升級計畫 - Day 5</title>
+    <title>Ava 英文能力升級計畫 - 第二週</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -32,7 +32,24 @@
             font-size: 14px;
             color: #7f8c8d;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #e8f4f8;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .nav-bar select {
+            padding: 6px 10px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: 1px solid #b0c4de;
+            background: #fff;
+            cursor: pointer;
         }
         .streak-badge {
             background-color: #fff3cd;
@@ -43,8 +60,44 @@
             border-radius: 8px;
             font-size: 14px;
             font-weight: bold;
+            margin-bottom: 15px;
+        }
+        /* 獎勵進度條樣式 */
+        .reward-box {
+            background: #eafaf1;
+            border: 1px solid #a3e4d7;
+            padding: 12px 15px;
+            border-radius: 10px;
             margin-bottom: 20px;
         }
+        .reward-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #117a65;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .progress-bar-container {
+            width: 100%;
+            background: #d1f2eb;
+            border-radius: 8px;
+            height: 12px;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: #27ae60;
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+        }
+        .reward-desc {
+            font-size: 12px;
+            color: #16a085;
+            margin-top: 6px;
+            text-align: right;
+        }
+
         .section-title {
             font-size: 16px;
             color: #2980b9;
@@ -136,142 +189,218 @@
         button.submit-btn:hover {
             background-color: #05b34c;
         }
-        #resultMsg {
-            margin-top: 12px;
+
+        /* 慶祝彈跳視窗樣式 */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-card {
+            background: #ffffff;
+            width: 85%;
+            max-width: 350px;
+            padding: 25px;
+            border-radius: 16px;
             text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            animation: popUp 0.3s ease-in-out;
+        }
+        @keyframes popUp {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .modal-card h2 {
+            color: #27ae60;
+            margin-top: 0;
+            font-size: 22px;
+        }
+        .modal-card p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.5;
+            margin: 15px 0;
+        }
+        .modal-btn {
+            background-color: #06c755;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 15px;
             font-weight: bold;
-            font-size: 14px;
+            cursor: pointer;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>🏨 Ava 英文能力升級計畫</h1>
-    <div class="subtitle">Day 5：帳單金額有誤 (Billing Issue) ✈️</div>
+    <h1>✈️ Ava 英文能力升級計畫</h1>
+    <div class="subtitle">第二週：機場通關與航廈應變</div>
+
+    <div class="nav-bar">
+        <span style="font-size: 14px; font-weight: bold; color: #2c3e50;">📅 選擇練習天數：</span>
+        <select id="daySelector" onchange="switchDay(this.value)">
+            <option value="w2_1" selected>第二週 Day 1：海關入境目的</option>
+            <option value="w1_weekend">⬅️ 回顧：第一週週末總複習</option>
+        </select>
+    </div>
 
     <div class="streak-badge" id="streakDisplay">🔥 目前連續打卡計算中...</div>
 
-    <div class="section-title">📚 今日 5 大核心單字（點擊 🔊 聽發音）</div>
-    <ul>
-        <li>
-            <b>Bill</b> (帳單)
-            <button class="audio-btn" onclick="speakText('Bill')">🔊 讀音</button>
-        </li>
-        <li>
-            <b>Mistake</b> (錯誤)
-            <button class="audio-btn" onclick="speakText('Mistake')">🔊 讀音</button>
-        </li>
-        <li>
-            <b>Minibar</b> (迷你吧)
-            <button class="audio-btn" onclick="speakText('Minibar')">🔊 讀音</button>
-        </li>
-        <li>
-            <b>Charge</b> (費用)
-            <button class="audio-btn" onclick="speakText('Charge')">🔊 讀音</button>
-        </li>
-        <li>
-            <b>Check</b> (檢查 / 核對)
-            <button class="audio-btn" onclick="speakText('Check')">🔊 讀音</button>
-        </li>
-    </ul>
-
-    <div class="section-title">🗣️ 今日黃金句型</div>
-    <div class="formula-box">
-        <b>"Excuse me, I think there's a mistake on my bill. I didn't use the minibar."</b>
-        <button class="audio-btn" style="float: right;" onclick="speakText('Excuse me, I think there is a mistake on my bill. I did not use the minibar.')">🔊 聽整句</button><br>
-        <span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">(不好意思，我覺得我的帳單有錯誤。我沒有使用迷你吧。)</span>
-    </div>
-
-    <div class="section-title">📝 記憶小測驗（共 5 題）</div>
-
-    <!-- 題目 1 -->
-    <div class="quiz-box">
-        <div class="question">1. 飯店的「帳單」英文單字是？</div>
-        <div class="options" id="q1">
-            <label><input type="radio" name="q1" value="A"> A. Bill</label>
-            <label><input type="radio" name="q1" value="B"> B. Book</label>
-            <label><input type="radio" name="q1" value="C"> C. Bag</label>
+    <!-- 禮物解鎖進度條區塊 -->
+    <div class="reward-box">
+        <div class="reward-title">
+            <span>🎁 實體心願解鎖：精美衣服一件</span>
+            <span id="progressText">0 / 5 天</span>
         </div>
-    </div>
-
-    <!-- 題目 2 -->
-    <div class="quiz-box">
-        <div class="question">2. 當你想表達帳單有「錯誤」，應該用哪個單字？</div>
-        <div class="options" id="q2">
-            <label><input type="radio" name="q2" value="A"> A. Success</label>
-            <label><input type="radio" name="q2" value="B"> B. Mistake</label>
-            <label><input type="radio" name="q2" value="C"> C. Perfect</label>
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progressBar"></div>
         </div>
+        <div class="reward-desc" id="rewardDesc">連續打卡滿 5 天即可解鎖心願禮物！</div>
     </div>
 
-    <!-- 題目 3 -->
-    <div class="quiz-box">
-        <div class="question">3. 飯店房間內的冰箱零食與飲料區，英文通常稱作？</div>
-        <div class="options" id="q3">
-            <label><input type="radio" name="q3" value="A"> A. Minibar</label>
-            <label><input type="radio" name="q3" value="B"> B. Kitchen</label>
-            <label><input type="radio" name="q3" value="C"> C. Coffee shop</label>
-        </div>
-    </div>
+    <div id="contentArea"></div>
+</div>
 
-    <!-- 題目 4 -->
-    <div class="quiz-box">
-        <div class="question">4. 請問「I didn't use...」的意思是？</div>
-        <div class="options" id="q4">
-            <label><input type="radio" name="q4" value="A"> A. 我想要使用...</label>
-            <label><input type="radio" name="q4" value="B"> B. 我沒有使用...</label>
-            <label><input type="radio" name="q4" value="C"> C. 你可以幫我用...</label>
-        </div>
-    </div>
-
-    <!-- 題目 5 -->
-    <div class="quiz-box">
-        <div class="question">5. 向櫃檯反應帳單有誤時，開頭的第一句話最適合用？</div>
-        <div class="options" id="q5">
-            <label><input type="radio" name="q5" value="A"> A. You are wrong.</label>
-            <label><input type="radio" name="q5" value="B"> B. Give me money.</label>
-            <label><input type="radio" name="q5" value="C"> C. Excuse me, I think there's a mistake...</label>
-        </div>
-    </div>
-
-    <div class="task-box">
-        <div style="font-weight: bold; color: #d35400;">🎯 句型造句挑戰</div>
-        <p style="font-size: 14px; margin: 5px 0 5px 0;">請嘗試完整寫出今天學到的帳單有誤反應句子：</p>
-        <textarea id="userAnswer" placeholder="例如：
-Excuse me, I think there's a mistake on my bill. I didn't use the minibar."></textarea>
-        
-        <button class="submit-btn" onclick="sendToLine()">✅ 檢查測驗並一鍵 Line 打卡</button>
-        <div id="resultMsg"></div>
+<!-- 慶祝彈窗 HTML -->
+<div class="modal-overlay" id="successModal">
+    <div class="modal-card">
+        <h2>🎉 太棒了！打卡成功！</h2>
+        <p id="modalText">你已經完成今日挑戰！英文能力正在飛速進步中，繼續保持！🚀</p>
+        <button class="modal-btn" onclick="proceedToLine()">🚀 馬上傳送到 Line 驗收</button>
     </div>
 </div>
 
 <script>
-    // 計算連續打卡天數
-    let currentStreak = 1;
-    function checkStreak() {
+    const daysData = {
+        w2_1: {
+            title: "第二週 Day 1：海關入境目的 (Customs & Purpose)",
+            words: [
+                { en: "Customs", zh: "海關" },
+                { en: "Purpose", zh: "目的 / 用途" },
+                { en: "Vacation", zh: "假期 / 度假" },
+                { en: "Business", zh: "商務 / 出差" },
+                { en: "Stay", zh: "停留 / 待" }
+            ],
+            formula: '"I am here for vacation. I will stay for five days."',
+            formulaZh: "(我是來度假的。我會停留五天。)",
+            quizzes: [
+                { q: "1. 飛機降落後要通關的「海關」英文是？", opts: ["Customs", "Kitchen", "Hotel"], ans: 0 },
+                { q: "2. 當海關問你旅行的「目的 (Purpose)」，如果你是來出差，要回答？", opts: ["Vacation", "Business", "Shopping"], ans: 1 },
+                { q: "3. 「I am here for...」在海關問話中最常用的意思是？", opts: ["我來這裡為了...", "我住在這裡...", "我討厭這裡..."], ans: 0 },
+                { q: "4. 如果想表達「停留五天」，英文怎麼說？", opts: ["Go for five days", "Stay for five days", "Run for five days"], ans: 1 },
+                { q: "5. 「Vacation」這個單字的意思是？", opts: ["商務開會", "度假 / 假期", "轉機"], ans: 1 }
+            ],
+            placeholder: "例如：\nI am here for vacation. I will stay for five days."
+        },
+        w1_weekend: {
+            title: "🎉 第一週週末總複習與總結挑戰",
+            words: [
+                { en: "Review", zh: "複習本週所有飯店情境" },
+                { en: "Emergency", zh: "突發狀況應對" }
+            ],
+            formula: '"I am ready for my hotel trip!"',
+            formulaZh: "(我已經準備好我的飯店英文之旅了！)",
+            quizzes: [
+                { q: "1. (Day 1) 房間冷氣壞掉時，要說：The [ ] in my room isn't working.", opts: ["Air conditioner", "Bed", "Window"], ans: 0 },
+                { q: "2. (Day 2) 想換房間時，最禮貌的開頭是？", opts: ["Give me another room", "Could I please move to another room?", "Change room now"], ans: 1 },
+                { q: "3. (Day 3) 被反鎖在房外時，英文片語是？", opts: ["Locked out", "Locked in", "Open door"], ans: 0 },
+                { q: "4. (Day 4) 想詢問能否延遲退房，應該說：Is it possible to have a...?", opts: ["Early check-in", "Late checkout", "Fast service"], ans: 1 },
+                { q: "5. (Day 5) 發現帳單有誤時，要說：I think there's a mistake on my...", opts: ["Bill", "Menu", "Key"], ans: 0 }
+            ],
+            placeholder: "請寫下一句這禮拜學到最有印象的飯店實用英文："
+        }
+    };
+
+    let globalPendingLineUrl = "";
+
+    function renderDay(dayKey) {
+        const data = daysData[dayKey];
+        let html = `<div style="font-weight: bold; color: #34495e; margin-bottom: 15px; font-size: 16px;">📌 ${data.title}</div>`;
+
+        if (dayKey !== 'w1_weekend') {
+            html += `<div class="section-title">📚 今日 5 大核心單字（點擊 🔊 聽發音）</div><ul>`;
+            data.words.forEach(w => {
+                html += `<li><b>${w.en}</b> (${w.zh}) <button class="audio-btn" onclick="speakText('${w.en}')">🔊 讀音</button></li>`;
+            });
+            html += `</ul>`;
+
+            html += `<div class="section-title">🗣️ 今日黃金句型</div>`;
+            html += `<div class="formula-box"><b>${data.formula}</b><button class="audio-btn" style="float: right;" onclick="speakText('${data.formula.replace(/'/g, "\\'")}')">🔊 聽整句</button><br><span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">${data.formulaZh}</span></div>`;
+        } else {
+            html += `<div class="formula-box" style="text-align: center; background: #fff9e6; border-left-color: #f1c40f;"><b>🌟 第一週總回顧挑戰！</b></div>`;
+        }
+
+        html += `<div class="section-title">📝 記憶小測驗（共 5 題）</div>`;
+        data.quizzes.forEach((quiz, index) => {
+            html += `<div class="quiz-box"><div class="question">${quiz.q}</div><div class="options" id="${dayKey}_q${index}">`;
+            quiz.opts.forEach((opt, optIdx) => {
+                const optLetter = ['A', 'B', 'C'][optIdx];
+                html += `<label><input type="radio" name="${dayKey}_q${index}" value="${optLetter}"> ${optLetter}. ${opt}</label>`;
+            });
+            html += `</div></div>`;
+        });
+
+        html += `<div class="task-box"><div style="font-weight: bold; color: #d35400;">🎯 句型造句挑戰</div><p style="font-size: 14px; margin: 5px 0 5px 0;">請嘗試寫出今日句型練習：</p><textarea id="userAnswer_${dayKey}" placeholder="${data.placeholder}"></textarea><button class="submit-btn" onclick="submitTask('${dayKey}')">✅ 檢查測驗並一鍵 Line 打卡</button><div id="resultMsg_${dayKey}"></div></div>`;
+
+        document.getElementById('contentArea').innerHTML = html;
+    }
+
+    function switchDay(dayKey) {
+        renderDay(dayKey);
+    }
+
+    renderDay('w2_1');
+
+    // 更新連續打卡與禮物進度條
+    function updateStreakAndReward() {
         const lastCheckDate = localStorage.getItem('ava_last_check_date');
         const storedStreak = parseInt(localStorage.getItem('ava_streak_count')) || 0;
         const today = new Date().toISOString().slice(0, 10);
-        
         const yesterdayDate = new Date();
         yesterdayDate.setDate(yesterdayDate.getDate() - 1);
         const yesterday = yesterdayDate.toISOString().slice(0, 10);
 
-        if (lastCheckDate === today) {
-            currentStreak = storedStreak > 0 ? storedStreak : 1;
-        } else if (lastCheckDate === yesterday) {
+        let currentStreak = 1;
+        if (lastCheckDate === today || lastCheckDate === yesterday) {
             currentStreak = storedStreak > 0 ? storedStreak : 1;
         } else {
             currentStreak = 1;
         }
-        
+
         document.getElementById('streakDisplay').innerText = `🔥 目前已連續打卡： ${currentStreak} 天！`;
+
+        // 計算禮物進度條 (目標 5 天)
+        const targetDays = 5;
+        let progressDays = currentStreak > targetDays ? targetDays : currentStreak;
+        // 如果今天還沒打卡且昨天沒打，進度歸零
+        if (lastCheckDate !== today && lastCheckDate !== yesterday && lastCheckDate) {
+            progressDays = 0;
+        }
+
+        const percentage = (progressDays / targetDays) * 100;
+        document.getElementById('progressBar').style.width = percentage + '%';
+        document.getElementById('progressText').innerText = `${progressDays} / ${targetDays} 天`;
+
+        if (progressDays >= targetDays) {
+            document.getElementById('rewardDesc').innerText = "🎊 太神啦！已成功解鎖心願禮物（衣服一件）！快去領取獎勵吧！";
+            document.getElementById('rewardDesc').style.fontWeight = "bold";
+        } else {
+            document.getElementById('rewardDesc').innerText = `再打卡 ${targetDays - progressDays} 天即可解鎖實體禮物（衣服一件）！`;
+        }
     }
+    updateStreakAndReward();
 
-    checkStreak();
-
-    // 瀏覽器內建發音朗讀函數
     function speakText(text) {
         if ('speechSynthesis' in window) {
             window.speechSynthesis.cancel();
@@ -284,34 +413,28 @@ Excuse me, I think there's a mistake on my bill. I didn't use the minibar."></te
         }
     }
 
-    function sendToLine() {
-        const msg = document.getElementById('resultMsg');
-        
-        const answers = {
-            q1: 'A',
-            q2: 'B',
-            q3: 'A',
-            q4: 'B',
-            q5: 'C'
+    function submitTask(dayKey) {
+        const msg = document.getElementById(`resultMsg_${dayKey}`);
+        const answerKeys = {
+            w2_1: ['A', 'B', 'A', 'B', 'B'],
+            w1_weekend: ['A', 'B', 'A', 'B', 'A']
         };
-        
+
         let score = 0;
         let allAnswered = true;
         
-        for (let key in answers) {
-            const radios = document.getElementsByName(key);
+        for (let i = 0; i < 5; i++) {
+            const radios = document.getElementsByName(`${dayKey}_q${i}`);
             let answered = false;
             for (let r of radios) {
                 if (r.checked) {
                     answered = true;
-                    if (r.value === answers[key]) {
+                    if (r.value === answerKeys[dayKey][i]) {
                         score += 20;
                     }
                 }
             }
-            if (!answered) {
-                allAnswered = false;
-            }
+            if (!answered) allAnswered = false;
         }
         
         if (!allAnswered) {
@@ -320,22 +443,21 @@ Excuse me, I think there's a mistake on my bill. I didn't use the minibar."></te
             return;
         }
         
-        const answerText = document.getElementById('userAnswer').value.trim();
-        if (answerText.length < 5) {
+        const answerText = document.getElementById(`userAnswer_${dayKey}`).value.trim();
+        if (answerText.length < 3) {
             msg.style.color = '#c0392b';
             msg.innerText = "請在下方寫出你的造句練習再送出喔！";
             return;
         }
 
-        // 更新打卡紀錄與連續天數
         const today = new Date().toISOString().slice(0, 10);
         const lastCheckDate = localStorage.getItem('ava_last_check_date');
         const storedStreak = parseInt(localStorage.getItem('ava_streak_count')) || 1;
-        
         const yesterdayDate = new Date();
         yesterdayDate.setDate(yesterdayDate.getDate() - 1);
         const yesterday = yesterdayDate.toISOString().slice(0, 10);
 
+        let currentStreak = 1;
         if (lastCheckDate !== today) {
             if (lastCheckDate === yesterday) {
                 currentStreak = storedStreak + 1;
@@ -349,16 +471,22 @@ Excuse me, I think there's a mistake on my bill. I didn't use the minibar."></te
         } else {
             currentStreak = storedStreak;
         }
+
+        updateStreakAndReward();
         
-        msg.style.color = '#27ae60';
-        msg.innerText = `測驗完成！得分：${score} 分！連續打卡 ${currentStreak} 天！即將開啟 Line...`;
-        
-        const lineMessage = `【Ava 英文打卡 Day 5】\n🔥 連續打卡：第 ${currentStreak} 天\n🎯 選擇題得分：${score} 分\n✍️ 造句練習：\n${answerText}`;
-        
-        setTimeout(() => {
-            const lineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(lineMessage)}`;
-            window.location.href = lineUrl;
-        }, 1000);
+        const titleLabel = dayKey === 'w1_weekend' ? '第一週總結' : '第二週 Day 1';
+        const lineMessage = `【Ava 英文打卡 ✈️ ${titleLabel}】\n🔥 連續打卡：第 ${currentStreak} 天\n🎯 選擇題得分：${score} 分\n✍️ 造句練習：\n${answerText}`;
+        globalPendingLineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(lineMessage)}`;
+
+        let rewardText = currentStreak >= 5 ? "<br>🎁 <b>恭喜解鎖實體心願：衣服一件！</b>" : `<br>距離解鎖衣服還差 ${5 - (currentStreak % 5 === 0 ? 5 : currentStreak % 5)} 天！`;
+        document.getElementById('modalText').innerHTML = `測驗得分 <b>${score} 分</b><br>🔥 連續打卡 <b>${currentStreak} 天</b>！${rewardText}`;
+        document.getElementById('successModal').style.display = 'flex';
+    }
+
+    function proceedToLine() {
+        if (globalPendingLineUrl) {
+            window.location.href = globalPendingLineUrl;
+        }
     }
 </script>
 

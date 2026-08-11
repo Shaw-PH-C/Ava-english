@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ava 英文能力升級計畫 - 第二週</title>
+    <title>Ava 英文能力升級計畫 - 第二週 Day 2</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -62,7 +62,6 @@
             font-weight: bold;
             margin-bottom: 15px;
         }
-        /* 獎勵進度條樣式 */
         .reward-box {
             background: #eafaf1;
             border: 1px solid #a3e4d7;
@@ -97,7 +96,6 @@
             margin-top: 6px;
             text-align: right;
         }
-
         .section-title {
             font-size: 16px;
             color: #2980b9;
@@ -111,7 +109,7 @@
             margin: 5px 0;
         }
         li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-size: 15px;
         }
         .audio-btn {
@@ -189,8 +187,6 @@
         button.submit-btn:hover {
             background-color: #05b34c;
         }
-
-        /* 慶祝彈跳視窗樣式 */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -250,14 +246,14 @@
     <div class="nav-bar">
         <span style="font-size: 14px; font-weight: bold; color: #2c3e50;">📅 選擇練習天數：</span>
         <select id="daySelector" onchange="switchDay(this.value)">
-            <option value="w2_1" selected>第二週 Day 1：海關入境目的</option>
+            <option value="w2_1">第二週 Day 1：海關入境目的</option>
+            <option value="w2_2" selected>第二週 Day 2：行李與海關申報 (進階)</option>
             <option value="w1_weekend">⬅️ 回顧：第一週週末總複習</option>
         </select>
     </div>
 
     <div class="streak-badge" id="streakDisplay">🔥 目前連續打卡計算中...</div>
 
-    <!-- 禮物解鎖進度條區塊 -->
     <div class="reward-box">
         <div class="reward-title">
             <span>🎁 實體心願解鎖：精美衣服一件</span>
@@ -272,7 +268,6 @@
     <div id="contentArea"></div>
 </div>
 
-<!-- 慶祝彈窗 HTML -->
 <div class="modal-overlay" id="successModal">
     <div class="modal-card">
         <h2>🎉 太棒了！打卡成功！</h2>
@@ -303,6 +298,31 @@
             ],
             placeholder: "例如：\nI am here for vacation. I will stay for five days."
         },
+        w2_2: {
+            title: "第二週 Day 2：行李與海關申報 (Baggage & Declaration - 10單字挑戰)",
+            words: [
+                { en: "Luggage", zh: "行李" },
+                { en: "Baggage claim", zh: "行李提領處" },
+                { en: "Declare", zh: "申報" },
+                { en: "Nothing to declare", zh: "無須申報" },
+                { en: "Prohibited", zh: "禁止的 / 違禁的" },
+                { en: "Item", zh: "物品 / 項目" },
+                { en: "Duty-free", zh: "免稅的" },
+                { en: "Form", zh: "表格" },
+                { en: "Security", zh: "安全檢查 / 安檢" },
+                { en: "Check", zh: "檢查 / 核對" }
+            ],
+            formula: '"I have nothing to declare. These are just personal items."',
+            formulaZh: "(我沒有需要申報的東西。這些就只是個人私人物品。)",
+            quizzes: [
+                { q: "1. 當海關詢問你是否有攜帶需要課稅的物品，若完全沒有違禁或超量，你要自信地回答：", opts: ["I have a lot to declare.", "I have nothing to declare.", "I want to check luggage."], ans: 1 },
+                { q: "2. 在機場走到轉盤拿行李時，應該要尋找哪一個指示牌？", opts: ["Baggage claim", "Duty-free shop", "Security check"], ans: 0 },
+                { q: "3. 「Prohibited」這個海關常見單字的正確中文意思是？", opts: ["特價優惠的", "免費贈送的", "禁止的 / 違禁的"], ans: 2 },
+                { q: "4. 如果海關指著你的行李箱問這些是什麼，你說「These are just personal items」，意思是？", opts: ["這些只是我的個人私人物品。", "這些是公司要賣的商品。", "這些是禁止攜帶的物品。"], ans: 0 },
+                { q: "5. 入境時通常需要在機上或海關填寫申報單，請問「表格」的英文單字是？", opts: ["Form", "Item", "Claim"], ans: 0 }
+            ],
+            placeholder: "例如：\nI have nothing to declare. These are just personal items."
+        },
         w1_weekend: {
             title: "🎉 第一週週末總複習與總結挑戰",
             words: [
@@ -328,20 +348,16 @@
         const data = daysData[dayKey];
         let html = `<div style="font-weight: bold; color: #34495e; margin-bottom: 15px; font-size: 16px;">📌 ${data.title}</div>`;
 
-        if (dayKey !== 'w1_weekend') {
-            html += `<div class="section-title">📚 今日 5 大核心單字（點擊 🔊 聽發音）</div><ul>`;
-            data.words.forEach(w => {
-                html += `<li><b>${w.en}</b> (${w.zh}) <button class="audio-btn" onclick="speakText('${w.en}')">🔊 讀音</button></li>`;
-            });
-            html += `</ul>`;
+        html += `<div class="section-title">📚 今日核心單字庫（點擊 🔊 聽發音）</div><ul>`;
+        data.words.forEach(w => {
+            html += `<li><b>${w.en}</b> (${w.zh}) <button class="audio-btn" onclick="speakText('${w.en}')">🔊 讀音</button></li>`;
+        });
+        html += `</ul>`;
 
-            html += `<div class="section-title">🗣️ 今日黃金句型</div>`;
-            html += `<div class="formula-box"><b>${data.formula}</b><button class="audio-btn" style="float: right;" onclick="speakText('${data.formula.replace(/'/g, "\\'")}')">🔊 聽整句</button><br><span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">${data.formulaZh}</span></div>`;
-        } else {
-            html += `<div class="formula-box" style="text-align: center; background: #fff9e6; border-left-color: #f1c40f;"><b>🌟 第一週總回顧挑戰！</b></div>`;
-        }
+        html += `<div class="section-title">🗣️ 今日黃金句型</div>`;
+        html += `<div class="formula-box"><b>${data.formula}</b><button class="audio-btn" style="float: right;" onclick="speakText('${data.formula.replace(/'/g, "\\'")}')">🔊 聽整句</button><br><span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">${data.formulaZh}</span></div>`;
 
-        html += `<div class="section-title">📝 記憶小測驗（共 5 題）</div>`;
+        html += `<div class="section-title">📝 記憶小測驗（進階 2 分難度・共 5 題）</div>`;
         data.quizzes.forEach((quiz, index) => {
             html += `<div class="quiz-box"><div class="question">${quiz.q}</div><div class="options" id="${dayKey}_q${index}">`;
             quiz.opts.forEach((opt, optIdx) => {
@@ -360,9 +376,8 @@
         renderDay(dayKey);
     }
 
-    renderDay('w2_1');
+    renderDay('w2_2');
 
-    // 更新連續打卡與禮物進度條
     function updateStreakAndReward() {
         const lastCheckDate = localStorage.getItem('ava_last_check_date');
         const storedStreak = parseInt(localStorage.getItem('ava_streak_count')) || 0;
@@ -380,10 +395,8 @@
 
         document.getElementById('streakDisplay').innerText = `🔥 目前已連續打卡： ${currentStreak} 天！`;
 
-        // 計算禮物進度條 (目標 5 天)
         const targetDays = 5;
         let progressDays = currentStreak > targetDays ? targetDays : currentStreak;
-        // 如果今天還沒打卡且昨天沒打，進度歸零
         if (lastCheckDate !== today && lastCheckDate !== yesterday && lastCheckDate) {
             progressDays = 0;
         }
@@ -417,6 +430,7 @@
         const msg = document.getElementById(`resultMsg_${dayKey}`);
         const answerKeys = {
             w2_1: ['A', 'B', 'A', 'B', 'B'],
+            w2_2: ['B', 'A', 'C', 'A', 'A'],
             w1_weekend: ['A', 'B', 'A', 'B', 'A']
         };
 
@@ -474,7 +488,7 @@
 
         updateStreakAndReward();
         
-        const titleLabel = dayKey === 'w1_weekend' ? '第一週總結' : '第二週 Day 1';
+        const titleLabel = dayKey === 'w2_2' ? '第二週 Day 2 (進階)' : '第二週 Day 1';
         const lineMessage = `【Ava 英文打卡 ✈️ ${titleLabel}】\n🔥 連續打卡：第 ${currentStreak} 天\n🎯 選擇題得分：${score} 分\n✍️ 造句練習：\n${answerText}`;
         globalPendingLineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(lineMessage)}`;
 

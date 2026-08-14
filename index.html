@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ava 英文能力升級計畫 - 精品購物與美食篇</title>
+    <title>Ava 英文能力升級計畫 - 精品退換貨與尺寸篇</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -272,13 +272,14 @@
 
 <div class="container">
     <h1>🛍️ Ava 英文能力升級計畫</h1>
-    <div class="subtitle">精品購物與精緻餐飲實戰篇</div>
+    <div class="subtitle">第二週 Day 3：精品退換貨與尺寸溝通</div>
 
     <div class="nav-bar">
         <span style="font-size: 14px; font-weight: bold; color: #2c3e50;">📅 選擇天數：</span>
         <select id="daySelector" onchange="switchDay(this.value)">
             <option value="w2_1">第二週 Day 1：愛馬仕購物篇</option>
-            <option value="w2_2" selected>第二週 Day 2：綜合名牌購物與美食餐飲</option>
+            <option value="w2_2">第二週 Day 2：綜合購物與美食餐飲</option>
+            <option value="w2_3" selected>第二週 Day 3：退換貨與尺寸溝通</option>
             <option value="w1_weekend">⬅️ 回顧：第一週週末總複習</option>
         </select>
     </div>
@@ -297,96 +298,90 @@
     </div>
 
     <!-- 核心單字 -->
-    <div class="section-title">📚 今日 10 大購物與餐飲核心單字</div>
+    <div class="section-title">📚 今日 10 大退換貨核心單字</div>
     <ul>
-        <li><b>Tax refund</b> (退稅) <button class="audio-btn" onclick="speakText('Tax refund')">🔊 讀音</button></li>
-        <li><b>Receipt</b> (收據 / 發票) <button class="audio-btn" onclick="speakText('Receipt')">🔊 讀音</button></li>
-        <li><b>Size available</b> (有庫存的尺寸) <button class="audio-btn" onclick="speakText('Size available')">🔊 讀音</button></li>
-        <li><b>Try on</b> (試穿 / 試戴) <button class="audio-btn" onclick="speakText('Try on')">🔊 讀音</button></li>
-        <li><b>Recommendation</b> (推薦 / 招牌菜或熱門款) <button class="audio-btn" onclick="speakText('Recommendation')">🔊 讀音</button></li>
-        <li><b>Reservation</b> (預約 / 訂位) <button class="audio-btn" onclick="speakText('Reservation')">🔊 讀音</button></li>
-        <li><b>Course</b> (套餐 / 上菜道數) <button class="audio-btn" onclick="speakText('Course')">🔊 讀音</button></li>
-        <li><b>Dietary restriction</b> (飲食忌口 / 過敏原) <button class="audio-btn" onclick="speakText('Dietary restriction')">🔊 讀音</button></li>
-        <li><b>Signature dish</b> (招牌菜) <button class="audio-btn" onclick="speakText('Signature dish')">🔊 讀音</button></li>
-        <li><b>Bill / Check</b> (帳單 / 結帳) <button class="audio-btn" onclick="speakText('Bill')">🔊 讀音</button></li>
+        <li><b>Exchange</b> (更換 / 交換) <button class="audio-btn" onclick="speakText('Exchange')">🔊 讀音</button></li>
+        <li><b>Return</b> (退貨) <button class="audio-btn" onclick="speakText('Return')">🔊 讀音</button></li>
+        <li><b>Refund</b> (退款) <button class="audio-btn" onclick="speakText('Refund')">🔊 讀音</button></li>
+        <li><b>Too small / Too big</b> (太小 / 太大) <button class="audio-btn" onclick="speakText('Too small')">🔊 讀音</button></li>
+        <li><b>Size up / Size down</b> (大一號 / 小一號) <button class="audio-btn" onclick="speakText('Size up')">🔊 讀音</button></li>
+        <li><b>Store credit</b> (購物金 / 店鋪折抵額度) <button class="audio-btn" onclick="speakText('Store credit')">🔊 讀音</button></li>
+        <li><b>Defective</b> (有瑕疵的 / 有問題的) <button class="audio-btn" onclick="speakText('Defective')">🔊 讀音</button></li>
+        <li><b>Policy</b> (政策 / 規定) <button class="audio-btn" onclick="speakText('Policy')">🔊 讀音</button></li>
+        <li><b>Original condition</b> (全新未拆封原狀 / 原本狀態) <button class="audio-btn" onclick="speakText('Original condition')">🔊 讀音</button></li>
+        <li><b>Proof of purchase</b> (購買證明 / 收據) <button class="audio-btn" onclick="speakText('Proof of purchase')">🔊 讀音</button></li>
     </ul>
 
     <!-- 黃金句型 -->
     <div class="section-title">🗣️ 今日實戰對話句型</div>
     <div class="formula-box">
-        <b>1. "Do you have this in my size? I'd like to try it on."</b>
-        <button class="audio-btn" style="float: right;" onclick="speakText('Do you have this in my size? I would like to try it on.')">🔊 聽整句1</button><br>
-        <span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">(請問這件有我的尺寸嗎？我想試穿看看。)</span>
-    </div>
-    <div class="formula-box" style="margin-top: 10px;">
-        <b>2. "Could you tell me what your signature dish is?"</b>
-        <button class="audio-btn" style="float: right;" onclick="speakText('Could you tell me what your signature dish is?')">🔊 聽整句2</button><br>
-        <span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">(可以告訴我你們的招牌菜是什麼嗎？)</span>
+        <b>"This is a bit too small. Could I exchange it for a size up, and do you need the receipt?"</b>
+        <button class="audio-btn" style="float: right;" onclick="speakText('This is a bit too small. Could I exchange it for a size up, and do you need the receipt?')">🔊 聽整句</button><br>
+        <span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">(這件有點太小了。我可以換大一號嗎？請問需要看收據嗎？)</span>
     </div>
 
     <!-- 選擇題 (2分難度) -->
     <div class="section-title">📝 記憶小測驗（進階實戰・共 5 題）</div>
 
     <div class="quiz-box">
-        <div class="question">1. 在國外名牌精品店結帳時，如果你想詢問是否可以辦理「退稅」，英文應該怎麼說？</div>
+        <div class="question">1. 如果你買了一件外套發現穿起來太緊，想請店員幫忙換「大一號」，正確的英文說法是？</div>
         <div class="options">
-            <label><input type="radio" name="q1" value="A"> A. Can I get a tax refund here?</label>
-            <label><input type="radio" name="q1" value="B"> B. Do you have a discount?</label>
-            <label><input type="radio" name="q1" value="C"> C. Where is the baggage claim?</label>
+            <label><input type="radio" name="q1" value="A"> A. Size down</label>
+            <label><input type="radio" name="q1" value="B"> B. Size up</label>
+            <label><input type="radio" name="q1" value="C"> C. Make it short</label>
         </div>
         <div id="fb_q1" class="feedback-text"></div>
     </div>
 
     <div class="quiz-box">
-        <div class="question">2. 當店員拿了一雙鞋或一件外套給你，你想表達「我想試穿看看」，正確的片語動詞是？</div>
+        <div class="question">2. 當店員告訴你該精品店「不接受現金退款，但可以提供店鋪折抵額度下次使用」，這個折抵額度英文叫？</div>
         <div class="options">
-            <label><input type="radio" name="q2" value="A"> A. Put away</label>
-            <label><input type="radio" name="q2" value="B"> B. Try on</label>
-            <label><input type="radio" name="q2" value="C"> C. Take off</label>
+            <label><input type="radio" name="q2" value="A"> A. Store credit</label>
+            <label><input type="radio" name="q2" value="B"> B. Tax refund</label>
+            <label><input type="radio" name="q2" value="C"> C. Free gift</label>
         </div>
         <div id="fb_q2" class="feedback-text"></div>
     </div>
 
     <div class="quiz-box">
-        <div class="question">3. 到米其林餐廳或高級餐廳用餐時，服務生若問你有沒有「Dietary restriction」，他是在詢問你？</div>
+        <div class="question">3. 前往櫃檯辦理退換貨時，店員通常會要求你出示「購買證明」或發票，英文是？</div>
         <div class="options">
-            <label><input type="radio" name="q3" value="A"> A. 預算限制或付費方式</label>
-            <label><input type="radio" name="q3" value="B"> B. 飲食忌口或過敏原（如不吃牛、海鮮過敏等）</label>
-            <label><input type="radio" name="q3" value="C"> C. 穿著服裝規定</label>
+            <label><input type="radio" name="q3" value="A"> A. Passport ID</label>
+            <label><input type="radio" name="q3" value="B"> B. Proof of purchase</label>
+            <label><input type="radio" name="q3" value="C"> C. Hotel reservation</label>
         </div>
         <div id="fb_q3" class="feedback-text"></div>
     </div>
 
     <div class="quiz-box">
-        <div class="question">4. 餐廳裡最受歡迎、最具代表性的「招牌菜」，英文專門用語是？</div>
+        <div class="question">4. 如果你發現剛買的精品包包縫線有瑕疵，想向店員反應它是「有缺陷/有瑕疵的」，要用哪個形容詞？</div>
         <div class="options">
-            <label><input type="radio" name="q4" value="A"> A. Signature dish</label>
-            <label><input type="radio" name="q4" value="B"> B. Fast food</label>
-            <label><input type="radio" name="q4" value="C"> C. Daily bill</label>
+            <label><input type="radio" name="q4" value="A"> A. Defective</label>
+            <label><input type="radio" name="q4" value="B"> B. Perfect</label>
+            <label><input type="radio" name="q4" value="C"> C. Expensive</label>
         </div>
         <div id="fb_q4" class="feedback-text"></div>
     </div>
 
     <div class="quiz-box">
-        <div class="question">5. 如果你有事先訂位，抵達餐廳時向接待人員報到，最標準的開頭句子是？</div>
+        <div class="question">5. 辦理退貨時，商品必須保持「全新未拆封的原狀」，英文專業說法是？</div>
         <div class="options">
-            <label><input type="radio" name="q5" value="A"> A. I want to buy food now.</label>
-            <label><input type="radio" name="q5" value="B"> B. I have a reservation under the name of...</label>
-            <label><input type="radio" name="q5" value="C"> C. Give me the bill please.</label>
+            <label><input type="radio" name="q5" value="A"> A. Second-hand style</label>
+            <label><input type="radio" name="q5" value="B"> B. Original condition</label>
+            <label><input type="radio" name="q5" value="C"> C. Open box item</label>
         </div>
         <div id="fb_q5" class="feedback-text"></div>
     </div>
 
     <!-- 造句挑戰 (帶具體場景) -->
     <div class="task-box">
-        <div style="font-weight: bold; color: #d35400;">🎯 購物與美食情境造句挑戰</div>
+        <div style="font-weight: bold; color: #d35400;">🎯 退換貨情境造句挑戰</div>
         <div class="scenario-desc">
-            <b>💡 實戰情境模擬（二選一或綜合發揮）：</b><br>
-            <b>情境 A（精品店）：</b>你在香奈兒或路易威登看中了一件商品，想問店員有沒有你的尺寸，並且想知道能不能辦理退稅。<br>
-            <b>情境 B（精緻餐廳）：</b>你和朋友到當地知名餐廳用餐，想請服務生推薦他們的招牌菜。<br>
-            請選擇一個情境，試著寫出對話英文句子！
+            <b>💡 實戰情境模擬：</b><br>
+            你在昨天的名牌店買了一雙鞋，但回飯店試穿發現**太小了 (too small)**。今天你拿著收據回到店裡，想請店員幫你**換大一號 (exchange it for a size up)**。<br>
+            請嘗試寫出這段向店員開口交涉的英文句子！
         </div>
-        <textarea id="userAnswer" placeholder="請試著寫出你的情境對話練習（例如：Do you have this in my size? Can I get a tax refund?）"></textarea>
+        <textarea id="userAnswer" placeholder="請試著寫出你的情境對話練習（例如：This is too small. Could I exchange it for a size up?）"></textarea>
         
         <button class="action-btn" onclick="gradeAndPreview()">🔍 檢查答案與預覽打卡內容</button>
         
@@ -461,14 +456,14 @@
     }
 
     function switchDay(dayVal) {
-        if (dayVal === 'w2_1') {
-            alert("切換功能：您可以隨時透過上方選單回到第一週或第二週其他單元！目前保留在當前頁面。");
+        if (dayVal === 'w1_weekend') {
+            alert("您可以透過此選單隨時切換回到第一週總複習或其他單元！");
         }
     }
 
     // 自動批改與預覽功能
     function gradeAndPreview() {
-        const correctAnswers = { q1: 'A', q2: 'B', q3: 'B', q4: 'A', q5: 'B' };
+        const correctAnswers = { q1: 'B', q2: 'A', q3: 'B', q4: 'A', q5: 'B' };
         let score = 0;
         let allAnswered = true;
 
@@ -521,10 +516,10 @@
             • 連續打卡：<b>第 ${finalStreak} 天</b><br>
             • 你的情境造句：<br><span style="color: #2980b9; font-style: italic;">"${answerText}"</span><br>
             <hr style="border:0; border-top:1px solid #ccc; margin:8px 0;">
-            ✨ 老師評語：情境對話非常實用且道地！點擊下方按鈕即可正式打卡。
+            ✨ 老師評語：退換貨與尺寸表達非常精準到位！點擊下方按鈕即可正式打卡。
         `;
 
-        const lineMessage = `【Ava 英文打卡 🛍️ 購物與美食篇】\n🔥 連續打卡：第 ${finalStreak} 天\n🎯 選擇題得分：${finalScore} 分\n✍️ 情境造句練習：\n${answerText}`;
+        const lineMessage = `【Ava 英文打卡 🛍️ 退換貨與尺寸篇】\n🔥 連續打卡：第 ${finalStreak} 天\n🎯 選擇題得分：${finalScore} 分\n✍️ 情境造句練習：\n${answerText}`;
         globalLineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(lineMessage)}`;
 
         document.getElementById('lineSendBtn').style.display = 'block';

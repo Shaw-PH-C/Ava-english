@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ava 英文能力升級計畫 - 輕鬆購物與點餐篇</title>
+    <title>Ava 英文能力升級計畫 - 服飾試穿篇</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -272,13 +272,13 @@
 
 <div class="container">
     <h1>🛍️ Ava 英文能力升級計畫</h1>
-    <div class="subtitle">第二週 Day 4：輕鬆逛街與點餐實戰篇</div>
+    <div class="subtitle">第三週 Day 1：服飾試穿與穿搭實戰篇</div>
 
     <div class="nav-bar">
         <span style="font-size: 14px; font-weight: bold; color: #2c3e50;">📅 選擇天數：</span>
         <select id="daySelector" onchange="switchDay(this.value)">
-            <option value="w2_3">第二週 Day 3：退換貨與尺寸</option>
-            <option value="w2_4" selected>第二週 Day 4：輕鬆逛街與點餐</option>
+            <option value="w3_1" selected>第三週 Day 1：試穿與更衣室</option>
+            <option value="w2_4">第二週 Day 4：輕鬆逛街與點餐</option>
             <option value="w1_weekend">⬅️ 回顧：第一週週末總複習</option>
         </select>
     </div>
@@ -296,97 +296,91 @@
         <div class="reward-desc" id="rewardDesc">連續打卡滿 5 天即可解鎖心願禮物！</div>
     </div>
 
-    <!-- 核心單字 (難度親民好記) -->
-    <div class="section-title">📚 今日 10 大實用生活單字</div>
+    <!-- 核心單字 (好記、實用) -->
+    <div class="section-title">📚 今日 10 大試穿實用單字</div>
     <ul>
-        <li><b>Sale</b> (特價 / 打折) <button class="audio-btn" onclick="speakText('Sale')">🔊 讀音</button></li>
-        <li><b>Price</b> (價格) <button class="audio-btn" onclick="speakText('Price')">🔊 讀音</button></li>
+        <li><b>Fitting room</b> (試衣間) <button class="audio-btn" onclick="speakText('Fitting room')">🔊 讀音</button></li>
+        <li><b>Mirror</b> (鏡子) <button class="audio-btn" onclick="speakText('Mirror')">🔊 讀音</button></li>
+        <li><b>Look good</b> (看起來好看) <button class="audio-btn" onclick="speakText('Look good')">🔊 讀音</button></li>
+        <li><b>Fit</b> (合身 / 適合) <button class="audio-btn" onclick="speakText('Fit')">🔊 讀音</button></li>
+        <li><b>Loose</b> (寬鬆的) <button class="audio-btn" onclick="speakText('Loose')">🔊 讀音</button></li>
+        <li><b>Tight</b> (緊身的 / 太緊的) <button class="audio-btn" onclick="speakText('Tight')">🔊 讀音</button></li>
         <li><b>Color</b> (顏色) <button class="audio-btn" onclick="speakText('Color')">🔊 讀音</button></li>
-        <li><b>Size</b> (尺寸) <button class="audio-btn" onclick="speakText('Size')">🔊 讀音</button></li>
-        <li><b>Help</b> (幫忙) <button class="audio-btn" onclick="speakText('Help')">🔊 讀音</button></li>
-        <li><b>Menu</b> (菜單) <button class="audio-btn" onclick="speakTest('Menu')">🔊 讀音</button></li>
-        <li><b>Order</b> (點餐 / 訂購) <button class="audio-btn" onclick="speakText('Order')">🔊 讀音</button></li>
-        <li><b>Water</b> (水) <button class="audio-btn" onclick="speakText('Water')">🔊 讀音</button></li>
-        <li><b>Food</b> (食物) <button class="audio-btn" onclick="speakText('Food')">🔊 讀音</button></li>
-        <li><b>Pay</b> (付款 / 結帳) <button class="audio-btn" onclick="speakText('Pay')">🔊 讀音</button></li>
+        <li><b>Style</b> (款式 / 風格) <button class="audio-btn" onclick="speakText('Style')">🔊 讀音</button></li>
+        <li><b>Take it</b> (買下它 / 帶走它) <button class="audio-btn" onclick="speakText('Take it')">🔊 讀音</button></li>
+        <li><b>Decide</b> (決定) <button class="audio-btn" onclick="speakText('Decide')">🔊 讀音</button></li>
     </ul>
 
     <!-- 黃金句型 -->
     <div class="section-title">🗣️ 今日實戰對話句型</div>
     <div class="formula-box">
-        <b>1. "Excuse me, how much is this? Do you have it in another color?"</b>
-        <button class="audio-btn" style="float: right;" onclick="speakText('Excuse me, how much is this? Do you have it in another color?')">🔊 聽整句1</button><br>
-        <span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">(不好意思，這個多少錢？有其他顏色嗎？)</span>
-    </div>
-    <div class="formula-box" style="margin-top: 10px;">
-        <b>2. "I am ready to order. Could I have some water, please?"</b>
-        <button class="audio-btn" style="float: right;" onclick="speakText('I am ready to order. Could I have some water, please?')">🔊 聽整句2</button><br>
-        <span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">(我準備好點餐了。可以請給我一些水嗎？)</span>
+        <b>"Where is the fitting room? I would like to try this on."</b>
+        <button class="audio-btn" style="float: right;" onclick="speakText('Where is the fitting room? I would like to try this on.')">🔊 聽整句</button><br>
+        <span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">(請問試衣間在哪裡？我想試穿這件。)</span>
     </div>
 
-    <!-- 選擇題 (平易近人好上手) -->
+    <!-- 選擇題 -->
     <div class="section-title">📝 記憶小測驗（輕鬆上手・共 5 題）</div>
 
     <div class="quiz-box">
-        <div class="question">1. 在店裡看到喜歡的東西，想問店員「這個多少錢？」，最常用的句子是？</div>
+        <div class="question">1. 在服飾店裡，你想找地方試穿衣服，應該問店員「Where is the...？」</div>
         <div class="options">
-            <label><input type="radio" name="q1" value="A"> A. How much is this?</label>
-            <label><input type="radio" name="q1" value="B"> B. Where is the airport?</label>
-            <label><input type="radio" name="q1" value="C"> C. What is your name?</label>
+            <label><input type="radio" name="q1" value="A"> A. Fitting room</label>
+            <label><input type="radio" name="q1" value="B"> B. Baggage claim</label>
+            <label><input type="radio" name="q1" value="C"> C. Minibar</label>
         </div>
         <div id="fb_q1" class="feedback-text"></div>
     </div>
 
     <div class="quiz-box">
-        <div class="question">2. 逛街時想問店員「有沒有其他顏色？」，英文是？</div>
+        <div class="question">2. 穿上衣服後照鏡子覺得太緊了，英文形容詞應該用？</div>
         <div class="options">
-            <label><input type="radio" name="q2" value="A"> A. Do you have it in another color?</label>
-            <label><input type="radio" name="q2" value="B"> B. Can I eat this food?</label>
-            <label><input type="radio" name="q2" value="C"> C. Is it free?</label>
+            <label><input type="radio" name="q2" value="A"> A. Loose</label>
+            <label><input type="radio" name="q2" value="B"> B. Tight</label>
+            <label><input type="radio" name="q2" value="C"> C. Clean</label>
         </div>
         <div id="fb_q2" class="feedback-text"></div>
     </div>
 
     <div class="quiz-box">
-        <div class="question">3. 到餐廳坐下後，服務生拿給你看點餐品項的小本子，這個叫什麼？</div>
+        <div class="question">3. 如果試穿後非常喜歡，決定要買下它了，可以跟店員說「I'll...」接哪兩個字？</div>
         <div class="options">
-            <label><input type="radio" name="q3" value="A"> A. Menu</label>
-            <label><input type="radio" name="q3" value="B"> B. Bill</label>
-            <label><input type="radio" name="q3" value="C"> C. Receipt</label>
+            <label><input type="radio" name="q3" value="A"> A. take it</label>
+            <label><input type="radio" name="q3" value="B"> B. drop it</label>
+            <label><input type="radio" name="q3" value="C"> C. lose it</label>
         </div>
         <div id="fb_q3" class="feedback-text"></div>
     </div>
 
     <div class="quiz-box">
-        <div class="question">4. 當你準備好要向服務生點餐時，可以說「I am ready to...」後面接哪個字？</div>
+        <div class="question">4. 想問店員這件衣服穿起來合不合身，可以用哪個單字？</div>
         <div class="options">
-            <label><input type="radio" name="q4" value="A"> A. sleep</label>
-            <label><input type="radio" name="q4" value="B"> B. order</label>
-            <label><input type="radio" name="q4" value="C"> C. leave</label>
+            <label><input type="radio" name="q4" value="A"> A. Fit</label>
+            <label><input type="radio" name="q4" value="B"> B. Bill</label>
+            <label><input type="radio" name="q4" value="C"> C. Form</label>
         </div>
         <div id="fb_q4" class="feedback-text"></div>
     </div>
 
     <div class="quiz-box">
-        <div class="question">5. 結帳時想問店員「可以用信用卡付錢嗎？」或者直接說想「付款」，英文動詞是？</div>
+        <div class="question">5. 照鏡子時，想稱讚這件衣服穿起來「看起來很好看」，英文是？</div>
         <div class="options">
-            <label><input type="radio" name="q5" value="A"> A. Pay</label>
-            <label><input type="radio" name="q5" value="B"> B. Play</label>
-            <label><input type="radio" name="q5" value="C"> C. Stay</label>
+            <label><input type="radio" name="q5" value="A"> A. Look bad</label>
+            <label><input type="radio" name="q5" value="B"> B. Look good</label>
+            <label><input type="radio" name="q5" value="C"> C. Look small</label>
         </div>
         <div id="fb_q5" class="feedback-text"></div>
     </div>
 
     <!-- 造句挑戰 (帶具體情境) -->
     <div class="task-box">
-        <div style="font-weight: bold; color: #d35400;">🎯 輕鬆逛街與點餐情境造句挑戰</div>
+        <div style="font-weight: bold; color: #d35400;">🎯 試穿情境造句挑戰</div>
         <div class="scenario-desc">
-            <b>💡 實戰情境模擬（二選一）：</b><br>
-            <b>情境 A（購物）：</b>你在店裡看到一件衣服或包包很喜歡，想問店員多少錢。<br>
-            <b>情境 B（餐廳）：</b>你坐在餐廳裡準備點餐，想先跟服務生要一杯水。<br>
-            請選擇一個情境，寫出簡單好用的英文句子！
+            <b>💡 實戰情境模擬：</b><br>
+            你在店裡拿了一件好看的外套，想問店員試衣間在哪裡，並表達你想試穿它。<br>
+            請嘗試寫出這段實用的英文對話句子！
         </div>
-        <textarea id="userAnswer" placeholder="請試著寫出你的練習句子（例如：How much is this? 或 I am ready to order.）"></textarea>
+        <textarea id="userAnswer" placeholder="請試著寫出你的練習句子（例如：Where is the fitting room? I would like to try this on.）"></textarea>
         
         <button class="action-btn" onclick="gradeAndPreview()">🔍 檢查答案與預覽打卡內容</button>
         
@@ -464,7 +458,7 @@
     }
 
     function gradeAndPreview() {
-        const correctAnswers = { q1: 'A', q2: 'A', q3: 'A', q4: 'B', q5: 'A' };
+        const correctAnswers = { q1: 'A', q2: 'B', q3: 'A', q4: 'A', q5: 'B' };
         let score = 0;
         let allAnswered = true;
 
@@ -517,10 +511,10 @@
             • 連續打卡：<b>第 ${finalStreak} 天</b><br>
             • 你的造句內容：<br><span style="color: #2980b9; font-style: italic;">"${answerText}"</span><br>
             <hr style="border:0; border-top:1px solid #ccc; margin:8px 0;">
-            ✨ 老師評語：句子簡單實用且符合日常逛街情境！點擊下方按鈕即可正式打卡。
+            ✨ 老師評語：試衣間詢問與試穿表達非常流暢自然！點擊下方按鈕即可正式打卡。
         `;
 
-        const lineMessage = `【Ava 英文打卡 🛍️ 輕鬆購物與點餐篇】\n🔥 連續打卡：第 ${finalStreak} 天\n🎯 選擇題得分：${finalScore} 分\n✍️ 情境造句練習：\n${answerText}`;
+        const lineMessage = `【Ava 英文打卡 🛍️ 服飾試穿篇】\n🔥 連續打卡：第 ${finalStreak} 天\n🎯 選擇題得分：${finalScore} 分\n✍️ 情境造句練習：\n${answerText}`;
         globalLineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(lineMessage)}`;
 
         document.getElementById('lineSendBtn').style.display = 'block';

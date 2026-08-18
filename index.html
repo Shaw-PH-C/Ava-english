@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ava 英文能力升級計畫 - 完整一週回顧</title>
+    <title>Ava 英文能力升級計畫 - 尋找尺寸與顏色篇</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -273,12 +273,13 @@
 
 <div class="container">
     <h1>🛍️ Ava 英文能力升級計畫</h1>
-    <div class="subtitle">完整一週自由回顧與練習中心</div>
+    <div class="subtitle">第三週 Day 2：尋找尺寸與顏色篇</div>
 
     <div class="nav-bar">
         <span style="font-size: 14px; font-weight: bold; color: #2c3e50;">📅 選擇天數：</span>
         <select id="daySelector" onchange="switchDay(this.value)">
-            <option value="w3_1" selected>第三週 Day 1：服飾試穿與更衣室</option>
+            <option value="w3_2" selected>第三週 Day 2：尋找尺寸與顏色</option>
+            <option value="w3_1">第三週 Day 1：服飾試穿與更衣室</option>
             <option value="w2_4">第二週 Day 4：輕鬆逛街與點餐</option>
             <option value="w2_3">第二週 Day 3：退換貨與尺寸溝通</option>
             <option value="w2_2">第二週 Day 2：綜合購物與美食餐飲</option>
@@ -304,7 +305,6 @@
         <div class="reward-desc" id="rewardDesc">連續打卡滿 5 天即可解鎖心願禮物！</div>
     </div>
 
-    <!-- 動態渲染區域 -->
     <div id="contentArea"></div>
 </div>
 
@@ -317,403 +317,58 @@
 </div>
 
 <script>
-    // 完整資料庫：包含第一週與第三週的所有單元
+    // 完整資料庫：包含第三週 Day 2 與其他所有單元
     const daysData = {
+        w3_2: {
+            title: "第三週 Day 2：尋找尺寸與顏色 (Sizes & Colors)",
+            words: [
+                { en: "Small / Medium / Large", zh: "小號 / 中號 / 大號" },
+                { en: "In stock", zh: "有現貨" },
+                { en: "Out of stock", zh: "缺貨 / 售完" },
+                { en: "Check", zh: "查看 / 確認" },
+                { en: "Backroom", zh: "後方倉庫" },
+                { en: "Small size", zh: "小尺寸" },
+                { en: "Large size", zh: "大尺寸" },
+                { en: "Different", zh: "不同的" },
+                { en: "Look for", zh: "尋找" },
+                { en: "Available", zh: "可買到的 / 有供應的" }
+            ],
+            formula: '"Do you have this in a medium size? Or do you have it in black?"',
+            formulaZh: "(請問這件有中號的嗎？或者有黑色的嗎？)",
+            quizzes: [
+                { q: "1. 當你問店員某個商品「有現貨嗎？」，英文習慣說「Is it...？」", opts: ["in stock", "out of stock", "on sale"], ans: 0 },
+                { q: "2. 如果店架上沒有你要的尺寸，店員通常會說「Let me check the...」去後面找找，指的是？", opts: ["backroom (倉庫)", "kitchen", "airport"], ans: 0 },
+                { q: "3. 「out of stock」在購物時代表什麼意思？", opts: ["特價優惠中", "缺貨 / 賣完了", "全新到貨"], ans: 1 },
+                { q: "4. 想詢問店員「請問這件有中號的嗎？」，中號的英文簡稱是？", opts: ["S (Small)", "M (Medium)", "L (Large)"], ans: 1 },
+                { q: "5. 「Look for」這個常用片語的意思是？", opts: ["尋找", "放棄", "忘記"], ans: 0 }
+            ],
+            answers: ['A', 'A', 'B', 'B', 'A'],
+            scenario: "你在架上看到一件喜歡的外衣，但找不到你的尺寸 (Medium)，也沒有看到你想要的黑色，請向店員開口詢問。",
+            placeholder: "例如：Do you have this in a medium size? Or do you have it in black?"
+        },
         w3_1: {
             title: "第三週 Day 1：服飾試穿與穿搭實戰篇",
             words: [
-                { en: "Fitting room", zh: "試衣間" },
-                { en: "Mirror", zh: "鏡子" },
-                { en: "Look good", zh: "看起來好看" },
-                { en: "Fit", zh: "合身 / 適合" },
-                { en: "Loose", zh: "寬鬆的" },
-                { en: "Tight", zh: "緊身的 / 太緊的" },
-                { en: "Color", zh: "顏色" },
-                { en: "Style", zh: "款式 / 風格" },
-                { en: "Take it", zh: "買下它 / 帶走它" },
-                { en: "Decide", zh: "決定" }
+                { en: "Fitting room", zh: "試衣間" }, { en: "Mirror", zh: "鏡子" }, { en: "Look good", zh: "看起來好看" }, { en: "Fit", zh: "合身" }, { en: "Loose", zh: "寬鬆的" },
+                { en: "Tight", zh: "緊身的" }, { en: "Color", zh: "顏色" }, { en: "Style", zh: "款式" }, { en: "Take it", zh: "買下它" }, { en: "Decide", zh: "決定" }
             ],
             formula: '"Where is the fitting room? I would like to try this on."',
             formulaZh: "(請問試衣間在哪裡？我想試穿這件。)",
             quizzes: [
-                { q: "1. 在服飾店裡，你想找地方試穿衣服，應該問店員「Where is the...？」", opts: ["Fitting room", "Baggage claim", "Minibar"], ans: 0 },
-                { q: "2. 穿上衣服後照鏡子覺得太緊了，英文形容詞應該用？", opts: ["Loose", "Tight", "Clean"], ans: 1 },
-                { q: "3. 如果試穿後非常喜歡，決定要買下它了，可以跟店員說「I'll...」接哪兩個字？", opts: ["take it", "drop it", "lose it"], ans: 0 },
-                { q: "4. 想問店員這件衣服穿起來合不合身，可以用哪個單字？", opts: ["Fit", "Bill", "Form"], ans: 0 },
-                { q: "5. 照鏡子時，想稱讚這件衣服穿起來「看起來很好看」，英文是？", opts: ["Look bad", "Look good", "Look small"], ans: 1 }
+                { q: "1. 想找試穿衣服的地方，問「Where is the...？」", opts: ["Fitting room", "Baggage claim", "Minibar"], ans: 0 },
+                { q: "2. 穿上覺得太緊了，形容詞用？", opts: ["Loose", "Tight", "Clean"], ans: 1 },
+                { q: "3. 決定要買下它了，跟店員說「I'll...」接哪兩個字？", opts: ["take it", "drop it", "lose it"], ans: 0 },
+                { q: "4. 問店員穿起來合不合身，用哪個單字？", opts: ["Fit", "Bill", "Form"], ans: 0 },
+                { q: "5. 稱讚「看起來很好看」，英文是？", opts: ["Look bad", "Look good", "Look small"], ans: 1 }
             ],
             answers: ['A', 'B', 'A', 'A', 'B'],
-            scenario: "你在店裡拿了一件好看的外套，想問店員試衣間在哪裡，並表達你想試穿它。",
+            scenario: "詢問試衣間位置並表達想試穿外套。",
             placeholder: "例如：Where is the fitting room? I would like to try this on."
         },
         w2_4: {
             title: "第二週 Day 4：輕鬆逛街與點餐實戰篇",
             words: [
-                { en: "Sale", zh: "特價 / 打折" }, { en: "Price", zh: "價格" }, { en: "Color", zh: "顏色" }, { en: "Size", zh: "尺寸" }, { en: "Help", zh: "幫忙" },
-                { en: "Menu", zh: "菜單" }, { en: "Order", zh: "點餐 / 訂購" }, { en: "Water", zh: "水" }, { en: "Food", zh: "食物" }, { en: "Pay", zh: "付款 / 結帳" }
+                { en: "Sale", zh: "特價" }, { en: "Price", zh: "價格" }, { en: "Color", zh: "顏色" }, { en: "Size", zh: "尺寸" }, { en: "Help", zh: "幫忙" },
+                { en: "Menu", zh: "菜單" }, { en: "Order", zh: "點餐" }, { en: "Water", zh: "水" }, { en: "Food", zh: "食物" }, { en: "Pay", zh: "付款" }
             ],
-            formula: '"Excuse me, how much is this? Do you have it in another color?"',
-            formulaZh: "(不好意思，這個多少錢？有其他顏色嗎？)",
-            quizzes: [
-                { q: "1. 在店裡看到喜歡的東西，想問店員「這個多少錢？」，最常用的句子是？", opts: ["How much is this?", "Where is the airport?", "What is your name?"], ans: 0 },
-                { q: "2. 逛街時想問店員「有沒有其他顏色？」，英文是？", opts: ["Do you have it in another color?", "Can I eat this food?", "Is it free?"], ans: 0 },
-                { q: "3. 到餐廳坐下後，服務生拿給你看點餐品項的小本子，這個叫什麼？", opts: ["Menu", "Bill", "Receipt"], ans: 0 },
-                { q: "4. 當你準備好要向服務生點餐時，可以說「I am ready to...」後面接哪個字？", opts: ["sleep", "order", "leave"], ans: 1 },
-                { q: "5. 結帳時想問店員「可以用信用卡付錢嗎？」或者直接說想「付款」，英文動詞是？", opts: ["Pay", "Play", "Stay"], ans: 0 }
-            ],
-            answers: ['A', 'A', 'A', 'B', 'A'],
-            scenario: "你在店裡看到喜歡的東西想問價格，或者在餐廳準備點餐，請寫出你的練習句子。",
-            placeholder: "例如：How much is this? 或 I am ready to order."
-        },
-        w2_3: {
-            title: "第二週 Day 3：精品退換貨與尺寸溝通",
-            words: [
-                { en: "Exchange", zh: "更換" }, { en: "Return", zh: "退貨" }, { en: "Refund", zh: "退款" }, { en: "Too small", zh: "太小" }, { en: "Size up", zh: "大一號" },
-                { en: "Store credit", zh: "購物金" }, { en: "Defective", zh: "有瑕疵" }, { en: "Policy", zh: "規定" }, { en: "Original condition", zh: "原狀" }, { en: "Proof of purchase", zh: "購買證明" }
-            ],
-            formula: '"This is a bit too small. Could I exchange it for a size up?"',
-            formulaZh: "(這件有點太小了。我可以換大一號嗎？)",
-            quizzes: [
-                { q: "1. 發現外套太緊，想請店員幫忙換「大一號」，正確說法是？", opts: ["Size down", "Size up", "Make it short"], ans: 1 },
-                { q: "2. 店員告知不接受現金退款但可提供店鋪折抵額度，這個叫？", opts: ["Store credit", "Tax refund", "Free gift"], ans: 0 },
-                { q: "3. 辦理退換貨時，店員通常會要求出示「購買證明」或發票，英文是？", opts: ["Passport ID", "Proof of purchase", "Hotel reservation"], ans: 1 },
-                { q: "4. 若剛買的包包有瑕疵，想向店員反應它是「有缺陷的」，用哪個字？", opts: ["Defective", "Perfect", "Expensive"], ans: 0 },
-                { q: "5. 退貨時商品必須保持「全新未拆封原狀」，專業說法是？", opts: ["Second-hand style", "Original condition", "Open box item"], ans: 1 }
-            ],
-            answers: ['B', 'A', 'B', 'A', 'B'],
-            scenario: "鞋子買回家發現太小了，你拿著收據回到店裡想請店員幫你換大一號。",
-            placeholder: "例如：This is too small. Could I exchange it for a size up?"
-        },
-        w2_2: {
-            title: "第二週 Day 2：綜合購物與美食餐飲",
-            words: [
-                { en: "Tax refund", zh: "退稅" }, { en: "Receipt", zh: "收據" }, { en: "Size available", zh: "尺寸庫存" }, { en: "Try on", zh: "試穿" }, { en: "Recommendation", zh: "推薦" },
-                { en: "Reservation", zh: "訂位" }, { en: "Course", zh: "套餐" }, { en: "Dietary restriction", zh: "忌口/過敏" }, { en: "Signature dish", zh: "招牌菜" }, { en: "Bill", zh: "帳單" }
-            ],
-            formula: '"Do you have this in my size? I would like to try it on."',
-            formulaZh: "(請問這件有我的尺寸嗎？我想試穿看看。)",
-            quizzes: [
-                { q: "1. 結帳時想詢問是否可以辦理「退稅」，英文怎麼說？", opts: ["Can I get a tax refund here?", "Do you have a discount?", "Where is baggage claim?"], ans: 0 },
-                { q: "2. 店員拿衣服給你，你想表達「我想試穿看看」，正確片語動詞是？", opts: ["Put away", "Try on", "Take off"], ans: 1 },
-                { q: "3. 餐廳服務生問你有沒有「Dietary restriction」，是在詢問？", opts: ["預算限制", "飲食忌口或過敏原", "服裝規定"], ans: 1 },
-                { q: "4. 餐廳最具代表性的「招牌菜」，英文專門用語是？", opts: ["Signature dish", "Fast food", "Daily bill"], ans: 0 },
-                { q: "5. 有事先訂位，抵達餐廳向接待人員報到，最標準的開頭是？", opts: ["I want food now.", "I have a reservation under...", "Give me the bill."], ans: 1 }
-            ],
-            answers: ['A', 'B', 'B', 'A', 'B'],
-            scenario: "在精品店想試穿衣服或在餐廳想詢問招牌菜，請寫出你的練習句子。",
-            placeholder: "例如：Do you have this in my size? I'd like to try it on."
-        },
-        w2_1: {
-            title: "第二週 Day 1：愛馬仕購物與配貨實戰",
-            words: [
-                { en: "Quota", zh: "配額限制" }, { en: "Pre-spend", zh: "配貨金額" }, { en: "Calfskin", zh: "牛皮" }, { en: "Goatskin", zh: "羊皮" }, { en: "Sandals", zh: "涼鞋/拖鞋" },
-                { en: "Silk scarf", zh: "絲巾" }, { en: "Availability", zh: "庫存情況" }, { en: "Wishlist", zh: "心願清單" }, { en: "Associate", zh: "銷售顧問" }, { en: "Inquire", zh: "詢問" }
-            ],
-            formula: '"I am looking for Oran sandals in goatskin, and I\'d like to inquire about silk scarves."',
-            formulaZh: "(我正在尋找羊皮 Oran 拖鞋，同時也想詢問絲巾。)",
-            quizzes: [
-                { q: "1. 店員常提到的「Quota」是指？", opts: ["購物折扣", "柏金凱莉等熱門包款的配額限制", "退稅手續費"], ans: 1 },
-                { q: "2. 想詢問店員店內有沒有某款商品的「庫存/現貨」，用哪個單字？", opts: ["Availability", "Pre-spend", "Discount"], ans: 0 },
-                { q: "3. 愛馬仕 Oran 拖鞋如果是「羊皮」材質，英文是？", opts: ["Epsom calfskin", "Goatskin / Chevre", "Canvas"], ans: 1 },
-                { q: "4. 把想要的包包配件清單拿給 SA 看，這份清單叫？", opts: ["Wishlist", "Receipt", "Invoice"], ans: 0 },
-                { q: "5. 句型中「Inquire about」的意思是？", opts: ["抱怨或客訴", "詢問 / 打聽關於...", "退貨或換貨"], ans: 1 }
-            ],
-            answers: ['B', 'A', 'B', 'A', 'B'],
-            scenario: "向愛馬仕銷售顧問打招呼，表達你想找羊皮拖鞋並詢問絲巾庫存。",
-            placeholder: "例如：I am looking for Oran sandals in goatskin..."
-        },
-        w1_5: {
-            title: "第一週 Day 5：帳單金額有誤 (Billing Issue)",
-            words: [
-                { en: "Bill", zh: "帳單" }, { en: "Mistake", zh: "錯誤" }, { en: "Minibar", zh: "迷你吧" }, { en: "Charge", zh: "費用" }, { en: "Check", zh: "檢查" }
-            ],
-            formula: '"Excuse me, I think there\'s a mistake on my bill. I didn\'t use the minibar."',
-            formulaZh: "(不好意思，我覺得我的帳單有錯誤。我沒有使用迷你吧。)",
-            quizzes: [
-                { q: "1. 飯店的「帳單」英文單字是？", opts: ["Bill", "Book", "Bag"], ans: 0 },
-                { q: "2. 當你想表達帳單有「錯誤」，應該用哪個單字？", opts: ["Success", "Mistake", "Perfect"], ans: 1 },
-                { q: "3. 房間內的冰箱零食與飲料區，英文稱作？", opts: ["Minibar", "Kitchen", "Coffee shop"], ans: 0 },
-                { q: "4. 請問「I didn't use...」的意思是？", opts: ["我想要使用...", "我沒有使用...", "你可以幫我用..."], ans: 1 },
-                { q: "5. 向櫃檯反應帳單有誤時，開頭第一句話最適合用？", opts: ["You are wrong.", "Give me money.", "Excuse me, I think there's a mistake..."], ans: 2 }
-            ],
-            answers: ['A', 'B', 'A', 'B', 'C'],
-            scenario: "退房時發現帳單多收了迷你吧的費用，請向櫃檯反應。",
-            placeholder: "例如：Excuse me, I think there's a mistake on my bill."
-        },
-        w1_4: {
-            title: "第一週 Day 4：寄放行李與延遲退房",
-            words: [
-                { en: "Luggage", zh: "行李" }, { en: "Leave", zh: "放置" }, { en: "Late", zh: "晚的" }, { en: "Checkout", zh: "退房" }, { en: "Possible", zh: "可能的" }
-            ],
-            formula: '"Could I leave my luggage here for a few hours?"',
-            formulaZh: "(我可以把行李寄放在這裡幾個小時嗎？)",
-            quizzes: [
-                { q: "1. 「行李」的英文單字是？", opts: ["Luggage", "Ticket", "Passport"], ans: 0 },
-                { q: "2. 當你想問「延遲退房」，英文是？", opts: ["Early check-in", "Late checkout", "Fast booking"], ans: 1 },
-                { q: "3. 「Is it possible to...」在句型中的意思是？", opts: ["...是不可能的嗎？", "...有可能嗎？ / 可以...嗎？", "誰可以..."], ans: 1 },
-                { q: "4. 寄放行李的動詞應該用哪個？", opts: ["Take", "Make", "Leave"], ans: 2 },
-                { q: "5. 請問「a few hours」的意思是？", opts: ["幾個小時", "幾天", "幾分鐘"], ans: 0 }
-            ],
-            answers: ['A', 'B', 'B', 'C', 'A'],
-            scenario: "退房後想把行李寄放在櫃檯幾個小時，請開口詢問。",
-            placeholder: "例如：Could I leave my luggage here for a few hours?"
-        },
-        w1_3: {
-            title: "第一週 Day 3：被反鎖或遺失房卡",
-            words: [
-                { en: "Locked out", zh: "被反鎖" }, { en: "Inside", zh: "裡面" }, { en: "Lost", zh: "遺失" }, { en: "Help", zh: "幫忙" }, { en: "Door", zh: "門" }
-            ],
-            formula: '"I left my key card inside the room, and I\'m locked out. Could you help me?"',
-            formulaZh: "(我把房卡留在房間裡了，被反鎖在外頭。可以請你幫幫我嗎？)",
-            quizzes: [
-                { q: "1. 「被反鎖在外面」的英文片語是？", opts: ["Locked out", "Locked in", "Closed down"], ans: 0 },
-                { q: "2. 如果房卡「遺失了」，應該用哪個單字？", opts: ["Found", "Lost", "Bought"], ans: 1 },
-                { q: "3. 「inside the room」的意思是？", opts: ["房間外面", "房間裡面", "飯店大廳"], ans: 1 },
-                { q: "4. 請求協助「可以請你幫幫我嗎？」，英文怎麼說？", opts: ["Could you help me?", "Can you leave me?", "Do you know me?"], ans: 0 },
-                { q: "5. 請問「door」的意思是？", opts: ["窗戶", "鑰匙", "門"], ans: 2 }
-            ],
-            answers: ['A', 'B', 'B', 'A', 'C'],
-            scenario: "不小心把房卡忘在房間內被反鎖，請向櫃檯求助。",
-            placeholder: "例如：I left my key card inside the room, and I'm locked out."
-        },
-        w1_2: {
-            title: "第一週 Day 2：要求換房間",
-            words: [
-                { en: "Noisy", zh: "吵雜" }, { en: "Small", zh: "太小" }, { en: "Smelly", zh: "有異味" }, { en: "Another", zh: "另一間" }, { en: "Quiet", zh: "安靜" }
-            ],
-            formula: '"Could I please move to another room? It\'s a bit too noisy."',
-            formulaZh: "(可以請我換到另一間房間嗎？這裡有點太吵了。)",
-            quizzes: [
-                { q: "1. 房間很「吵雜」，英文形容詞是？", opts: ["Quiet", "Noisy", "Clean"], ans: 1 },
-                { q: "2. 表達房間「太小了」，用哪個單字？", opts: ["Big", "Small", "High"], ans: 1 },
-                { q: "3. 「another room」意思是？", opts: ["原來的房間", "豪華套房", "另一間房間"], ans: 2 },
-                { q: "4. 房間有異味、聞起來臭臭的，用哪個單字？", opts: ["Smelly", "Sweet", "Fresh"], ans: 0 },
-                { q: "5. 詢問「可以請我換到另一間房間嗎？」最禮貌的開頭是？", opts: ["You must change...", "Could I please move to...", "Give me..."], ans: 1 }
-            ],
-            answers: ['B', 'B', 'C', 'A', 'B'],
-            scenario: "房間隔音不好太吵了，請向櫃檯要求換到另一間房。",
-            placeholder: "例如：Could I please move to another room? It's a bit too noisy."
-        },
-        w1_1: {
-            title: "第一週 Day 1：房間設備故障",
-            words: [
-                { en: "Air conditioner", zh: "空調" }, { en: "Shower", zh: "淋浴/熱水" }, { en: "Light", zh: "燈光" }, { en: "TV", zh: "電視" }, { en: "Wi-Fi", zh: "網路" }
-            ],
-            formula: '"Excuse me, the Wi-Fi in my room isn\'t working."',
-            formulaZh: "(不好意思，我房間裡的網路故障不能用了。)",
-            quizzes: [
-                { q: "1. 房間「冷氣/空調」英文是？", opts: ["Fan", "Air conditioner", "Heater"], ans: 1 },
-                { q: "2. 表達「網路壞了」，用哪個單字？", opts: ["Wi-Fi", "Phone", "Radio"], ans: 0 },
-                { q: "3. 反應東西故障，句型開頭怎麼說最禮貌？", opts: ["Hey, listen to me", "Excuse me", "Stop it"], ans: 1 },
-                { q: "4. 「淋浴設備 / 熱水」英文是？", opts: ["Bath", "Shower", "Water"], ans: 1 },
-                { q: "5. 「isn't working」意思是？", opts: ["正在工作", "非常乾淨", "故障不能用了"], ans: 2 }
-            ],
-            answers: ['B', 'A', 'B', 'B', 'C'],
-            scenario: "房間的空調或網路故障了，請向櫃檯反應。",
-            placeholder: "例如：Excuse me, the air conditioner in my room isn't working."
-        }
-    };
-
-    let globalLineUrl = "";
-    let finalScore = 0;
-    let finalStreak = 1;
-    let activeDayKey = 'w3_1';
-
-    function updateStreakAndReward() {
-        const lastCheckDate = localStorage.getItem('ava_last_check_date');
-        const storedStreak = parseInt(localStorage.getItem('ava_streak_count')) || 0;
-        const today = new Date().toISOString().slice(0, 10);
-        const yesterdayDate = new Date();
-        yesterdayDate.setDate(yesterdayDate.getDate() - 1);
-        const yesterday = yesterdayDate.toISOString().slice(0, 10);
-
-        let currentStreak = 1;
-        if (lastCheckDate === today || lastCheckDate === yesterday) {
-            currentStreak = storedStreak > 0 ? storedStreak : 1;
-        } else {
-            currentStreak = 1;
-        }
-        finalStreak = currentStreak;
-
-        document.getElementById('streakDisplay').innerText = `🔥 目前已連續打卡： ${currentStreak} 天！`;
-
-        const targetDays = 5;
-        let progressDays = currentStreak > targetDays ? targetDays : currentStreak;
-        if (lastCheckDate !== today && lastCheckDate !== yesterday && lastCheckDate) {
-            progressDays = 0;
-        }
-
-        const percentage = (progressDays / targetDays) * 100;
-        document.getElementById('progressBar').style.width = percentage + '%';
-        document.getElementById('progressText').innerText = `${progressDays} / ${targetDays} 天`;
-
-        if (progressDays >= targetDays) {
-            document.getElementById('rewardDesc').innerText = "🎊 太神啦！已成功解鎖心願禮物（衣服一件）！";
-        } else {
-            document.getElementById('rewardDesc').innerText = `再打卡 ${targetDays - progressDays} 天即可解鎖實體禮物（衣服一件）！`;
-        }
-    }
-    updateStreakAndReward();
-
-    function speakText(text) {
-        if ('speechSynthesis' in window) {
-            window.speechSynthesis.cancel();
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'en-US';
-            utterance.rate = 0.85;
-            window.speechSynthesis.speak(utterance);
-        } else {
-            alert("您的瀏覽器不支援語音朗讀");
-        }
-    }
-
-    // 渲染指定天數的畫面
-    function renderDay(dayKey) {
-        activeDayKey = dayKey;
-        const data = daysData[dayKey];
-        let html = `<div style="font-weight: bold; color: #34495e; margin-bottom: 15px; font-size: 16px;">📌 ${data.title}</div>`;
-
-        html += `<div class="section-title">📚 核心單字清單（點擊 🔊 聽發音）</div><ul>`;
-        data.words.forEach(w => {
-            html += `<li><b>${w.en}</b> (${w.zh}) <button class="audio-btn" onclick="speakText('${w.en}')">🔊 讀音</button></li>`;
-        });
-        html += `</ul>`;
-
-        html += `<div class="section-title">🗣️ 黃金對話句型</div>`;
-        html += `<div class="formula-box"><b>${data.formula}</b><button class="audio-btn" style="float: right;" onclick="speakText('${data.formula.replace(/'/g, "\\'")}')">🔊 聽整句</button><br><span style="font-size: 13px; color: #555; display: block; margin-top: 6px;">${data.formulaZh}</span></div>`;
-
-        html += `<div class="section-title">📝 記憶小測驗（共 5 題）</div>`;
-        data.quizzes.forEach((quiz, index) => {
-            html += `<div class="quiz-box"><div class="question">${quiz.q}</div><div class="options" id="${dayKey}_q${index}">`;
-            quiz.opts.forEach((opt, optIdx) => {
-                const optLetter = ['A', 'B', 'C'][optIdx];
-                html += `<label><input type="radio" name="${dayKey}_q${index}" value="${optLetter}"> ${optLetter}. ${opt}</label>`;
-            });
-            html += `</div></div><div id="fb_${dayKey}_q${index}" class="feedback-text"></div>`;
-        });
-
-        html += `<div class="task-box">
-            <div style="font-weight: bold; color: #d35400;">🎯 情境造句挑戰</div>
-            <div class="scenario-desc"><b>💡 練習場景：</b>${data.scenario}</div>
-            <textarea id="userAnswer_${dayKey}" placeholder="${data.placeholder}"></textarea>
-            <button class="action-btn" onclick="gradeAndPreview('${dayKey}')">🔍 檢查答案與預覽打卡內容</button>
-            <div id="previewArea_${dayKey}" style="margin-top:15px; background:#f4f6f7; padding:12px; border-radius:6px; font-size:14px; display:none; border:1px solid #bdc3c7;"></div>
-            <button class="line-btn" id="lineSendBtn_${dayKey}" onclick="sendToLine('${dayKey}')">🚀 確認無誤，一鍵 Line 打卡送出！</button>
-        </div>`;
-
-        document.getElementById('contentArea').innerHTML = html;
-    }
-
-    function switchDay(dayVal) {
-        renderDay(dayVal);
-    }
-
-    // 初始化渲染預設當天
-    renderDay('w3_1');
-
-    function gradeAndPreview(dayKey) {
-        const data = daysData[dayKey];
-        const correctAnswers = data.answers;
-        let score = 0;
-        let allAnswered = true;
-
-        for (let i = 0; i < correctAnswers.length; i++) {
-            const key = `${dayKey}_q${i}`;
-            const radios = document.getElementsByName(key);
-            let answered = false;
-            let selectedVal = "";
-            for (let r of radios) {
-                if (r.checked) {
-                    answered = true;
-                    selectedVal = r.value;
-                }
-            }
-
-            const fb = document.getElementById(`fb_${key}`);
-            if (!answered) {
-                allAnswered = false;
-                fb.innerText = "❌ 請選擇答案";
-                fb.className = "feedback-text incorrect";
-            } else {
-                if (selectedVal === correctAnswers[i]) {
-                    score += 20;
-                    fb.innerText = "✅ 答對了！";
-                    fb.className = "feedback-text correct";
-                } else {
-                    fb.innerText = `❌ 答錯了 (正確答案是 ${correctAnswers[i]})`;
-                    fb.className = "feedback-text incorrect";
-                }
-            }
-        }
-
-        if (!allAnswered) {
-            alert("還有選擇題尚未作答完畢喔！");
-            return;
-        }
-
-        const answerText = document.getElementById(`userAnswer_${dayKey}`).value.trim();
-        if (answerText.length < 3) {
-            alert("請在下方造句欄位寫下你的情境練習！");
-            return;
-        }
-
-        finalScore = score;
-
-        const previewArea = document.getElementById(`previewArea_${dayKey}`);
-        previewArea.style.display = 'block';
-        previewArea.innerHTML = `
-            <b>🔍 智慧批改與打卡內容預覽：</b><br>
-            • 單元：<b>${data.title}</b><br>
-            • 選擇題得分：<b>${score} 分</b><br>
-            • 連續打卡：<b>第 ${finalStreak} 天</b><br>
-            • 你的造句內容：<br><span style="color: #2980b9; font-style: italic;">"${answerText}"</span><br>
-            <hr style="border:0; border-top:1px solid #ccc; margin:8px 0;">
-            ✨ 老師評語：練習表現非常棒！點擊下方按鈕即可正式打卡。
-        `;
-
-        const lineMessage = `【Ava 英文打卡 🌟 ${data.title}】\n🔥 連續打卡：第 ${finalStreak} 天\n🎯 選擇題得分：${finalScore} 分\n✍️ 造句練習：\n${answerText}`;
-        globalLineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(lineMessage)}`;
-
-        document.getElementById(`lineSendBtn_${dayKey}`).style.display = 'block';
-        previewArea.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function sendToLine(dayKey) {
-        const today = new Date().toISOString().slice(0, 10);
-        const lastCheckDate = localStorage.getItem('ava_last_check_date');
-        const storedStreak = parseInt(localStorage.getItem('ava_streak_count')) || 1;
-        const yesterdayDate = new Date();
-        yesterdayDate.setDate(yesterdayDate.getDate() - 1);
-        const yesterday = yesterdayDate.toISOString().slice(0, 10);
-
-        let currentStreak = 1;
-        if (lastCheckDate !== today) {
-            if (lastCheckDate === yesterday) {
-                currentStreak = storedStreak + 1;
-            } else if (!lastCheckDate) {
-                currentStreak = 1;
-            } else {
-                currentStreak = 1;
-            }
-            localStorage.setItem('ava_streak_count', currentStreak);
-            localStorage.setItem('ava_last_check_date', today);
-        } else {
-            currentStreak = storedStreak;
-        }
-
-        updateStreakAndReward();
-
-        let rewardText = currentStreak >= 5 ? "<br>🎁 <b>恭喜解鎖實體心願：衣服一件！</b>" : `<br>距離解鎖衣服還差 ${5 - (currentStreak % 5 === 0 ? 5 : currentStreak % 5)} 天！`;
-        document.getElementById('modalText').innerHTML = `單元完成！得分 <b>${finalScore} 分</b><br>🔥 連續打卡 <b>${currentStreak} 天</b>！${rewardText}`;
-        document.getElementById('successModal').style.display = 'flex';
-    }
-
-    function closeModalAndRedirect() {
-        if (globalLineUrl) {
-            window.location.href = globalLineUrl;
-        }
-    }
-</script>
-
-</body>
-</html>
+            formula: '"Excuse me, how much is this? Do you have it in another

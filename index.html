@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ava 英文能力升級計畫 - 尋找尺寸與顏色篇</title>
+    <title>Ava 英文能力升級計畫 - 情人節浪漫專屬篇</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f7f9fc;
+            background-color: #fff0f5; /* 浪漫粉色系背景 */
             color: #333;
             margin: 0;
             padding: 20px;
@@ -20,25 +20,27 @@
             background: #ffffff;
             padding: 24px;
             border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(233, 30, 99, 0.15);
+            border: 2px solid #ffb6c1;
         }
         h1 {
             font-size: 20px;
-            color: #2c3e50;
+            color: #c71585;
             text-align: center;
             margin-bottom: 5px;
         }
         .subtitle {
             font-size: 14px;
-            color: #7f8c8d;
+            color: #db7093;
             text-align: center;
             margin-bottom: 15px;
+            font-weight: bold;
         }
         .nav-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #e8f4f8;
+            background: #ffe4e1;
             padding: 10px;
             border-radius: 8px;
             margin-bottom: 15px;
@@ -47,15 +49,15 @@
             padding: 6px 10px;
             font-size: 14px;
             border-radius: 6px;
-            border: 1px solid #b0c4de;
+            border: 1px solid #ffb6c1;
             background: #fff;
             cursor: pointer;
             max-width: 220px;
         }
         .streak-badge {
-            background-color: #fff3cd;
-            color: #856404;
-            border: 1px solid #ffeeba;
+            background-color: #fff0f5;
+            color: #c71585;
+            border: 1px solid #ffb6c1;
             text-align: center;
             padding: 8px;
             border-radius: 8px;
@@ -64,8 +66,8 @@
             margin-bottom: 15px;
         }
         .reward-box {
-            background: #eafaf1;
-            border: 1px solid #a3e4d7;
+            background: #fff5ee;
+            border: 1px solid #ffdab9;
             padding: 12px 15px;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -73,36 +75,36 @@
         .reward-title {
             font-size: 14px;
             font-weight: bold;
-            color: #117a65;
+            color: #d2691e;
             display: flex;
             justify-content: space-between;
             margin-bottom: 8px;
         }
         .progress-bar-container {
             width: 100%;
-            background: #d1f2eb;
+            background: #ffe4c4;
             border-radius: 8px;
             height: 12px;
             overflow: hidden;
         }
         .progress-bar-fill {
             height: 100%;
-            background: #27ae60;
+            background: #ff69b4;
             width: 0%;
             transition: width 0.5s ease-in-out;
         }
         .reward-desc {
             font-size: 12px;
-            color: #16a085;
+            color: #cd853f;
             margin-top: 6px;
             text-align: right;
         }
         .section-title {
             font-size: 16px;
-            color: #2980b9;
+            color: #c71585;
             margin-top: 20px;
             margin-bottom: 10px;
-            border-bottom: 2px solid #ecf0f1;
+            border-bottom: 2px solid #ffb6c1;
             padding-bottom: 5px;
         }
         ul {
@@ -114,7 +116,7 @@
             font-size: 15px;
         }
         .audio-btn {
-            background-color: #3498db;
+            background-color: #ff69b4;
             color: white;
             border: none;
             border-radius: 4px;
@@ -125,19 +127,19 @@
             transition: background 0.2s;
         }
         .audio-btn:hover {
-            background-color: #2980b9;
+            background-color: #ff1493;
         }
         .formula-box {
-            background: #e8f4f8;
-            border-left: 4px solid #3498db;
+            background: #fff0f5;
+            border-left: 4px solid #ff69b4;
             padding: 12px;
             border-radius: 4px;
             font-size: 15px;
             margin: 15px 0;
         }
         .quiz-box {
-            background: #fdfefe;
-            border: 1px solid #d5dbdb;
+            background: #fffdfd;
+            border: 1px solid #ffccd5;
             padding: 15px;
             border-radius: 8px;
             margin-top: 15px;
@@ -146,7 +148,7 @@
             font-weight: bold;
             font-size: 14px;
             margin-bottom: 8px;
-            color: #34495e;
+            color: #c71585;
         }
         .options label {
             display: block;
@@ -163,18 +165,18 @@
         .incorrect { color: #c0392b; }
 
         .task-box {
-            background: #fff9e6;
-            border: 1px dashed #f1c40f;
+            background: #fff5f8;
+            border: 1px dashed #ff69b4;
             padding: 15px;
             border-radius: 8px;
             margin-top: 20px;
         }
         .scenario-desc {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
+            background: #ffe4e1;
+            border-left: 4px solid #ff1493;
             padding: 10px;
             font-size: 13px;
-            color: #856404;
+            color: #c71585;
             margin-bottom: 10px;
             border-radius: 4px;
             line-height: 1.4;
@@ -183,7 +185,7 @@
             width: 100%;
             height: 70px;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #ffb6c1;
             border-radius: 6px;
             box-sizing: border-box;
             font-size: 14px;
@@ -192,7 +194,7 @@
         }
         button.action-btn {
             width: 100%;
-            background-color: #2980b9;
+            background-color: #ff69b4;
             color: white;
             border: none;
             padding: 12px;
@@ -204,7 +206,7 @@
             transition: background 0.2s;
         }
         button.action-btn:hover {
-            background-color: #1f618d;
+            background-color: #ff1493;
         }
         button.line-btn {
             width: 100%;
@@ -223,16 +225,8 @@
         button.line-btn:hover {
             background-color: #05b34c;
         }
-        #previewArea {
-            margin-top: 15px;
-            background: #f4f6f7;
-            padding: 12px;
-            border-radius: 6px;
-            font-size: 14px;
-            display: none;
-            border: 1px solid #bdc3c7;
-        }
 
+        /* 浪漫驚喜彈窗樣式 */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -240,45 +234,64 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             justify-content: center;
             align-items: center;
             z-index: 1000;
         }
         .modal-card {
-            background: #ffffff;
+            background: #fff0f5;
             width: 85%;
-            max-width: 350px;
+            max-width: 380px;
             padding: 25px;
-            border-radius: 16px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
+            border: 3px solid #ff69b4;
+            animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .modal-card h2 { color: #27ae60; margin-top: 0; font-size: 22px; }
+        @keyframes popUp {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .modal-card h2 { color: #c71585; margin-top: 0; font-size: 22px; }
+        .modal-card p { font-size: 14px; color: #555; line-height: 1.6; margin: 15px 0; }
+        .surprise-box {
+            background: #ffffff;
+            border: 2px dashed #ff1493;
+            padding: 12px;
+            border-radius: 12px;
+            margin: 15px 0;
+            color: #d81b60;
+            font-weight: bold;
+            font-size: 15px;
+        }
         .modal-btn {
-            background-color: #06c755;
+            background-color: #ff1493;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 12px 20px;
+            border-radius: 10px;
             font-size: 15px;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
-            margin-top: 15px;
+            margin-top: 10px;
+            box-shadow: 0 4px 10px rgba(255, 20, 147, 0.3);
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>🛍️ Ava 英文能力升級計畫</h1>
-    <div class="subtitle">第三週 Day 2：尋找尺寸與顏色篇</div>
+    <h1>💖 Ava 英文能力升級計畫</h1>
+    <div class="subtitle">🌹 特别企劃：情人節浪漫購物與約會篇</div>
 
     <div class="nav-bar">
-        <span style="font-size: 14px; font-weight: bold; color: #2c3e50;">📅 選擇天數：</span>
+        <span style="font-size: 14px; font-weight: bold; color: #c71585;">📅 選擇天數：</span>
         <select id="daySelector" onchange="switchDay(this.value)">
-            <option value="w3_2" selected>第三週 Day 2：尋找尺寸與顏色</option>
+            <option value="valentine" selected>🌹 情人節特別企劃：浪漫約會與禮物</option>
+            <option value="w3_2">第三週 Day 2：尋找尺寸與顏色</option>
             <option value="w3_1">第三週 Day 1：服飾試穿與更衣室</option>
             <option value="w2_4">第二週 Day 4：輕鬆逛街與點餐</option>
             <option value="w2_3">第二週 Day 3：退換貨與尺寸溝通</option>
@@ -305,64 +318,90 @@
         <div class="reward-desc" id="rewardDesc">連續打卡滿 5 天即可解鎖心願禮物！</div>
     </div>
 
+    <!-- 動態渲染區域 -->
     <div id="contentArea"></div>
 </div>
 
+<!-- 破關驚喜彈窗 -->
 <div class="modal-overlay" id="successModal">
     <div class="modal-card">
-        <h2>🎉 太棒了！打卡成功！</h2>
-        <p id="modalText">你已經完成今日挑戰！</p>
-        <button class="modal-btn" onclick="closeModalAndRedirect()">前往 Line 傳送打卡訊息 🚀</button>
+        <h2>💖 Happy Valentine's Day! 🌹</h2>
+        <div id="modalText">
+            <p>太棒了！測驗順利通關！</p>
+            <div class="surprise-box" id="surpriseContent">
+                🎁 <b>解鎖隱藏情人節驚喜：</b><br>
+                「祝我們家最認真、最漂亮的 Ava 情人節快樂！不管英文或生活，有你一路相伴就是最完美的風景。今晚的浪漫晚餐與心願禮物準備好囉！✨」
+            </div>
+        </div>
+        <button class="modal-btn" onclick="closeModalAndRedirect()">🚀 將甜蜜打卡與成果傳送到 Line！</button>
     </div>
 </div>
 
 <script>
-    // 完整資料庫：包含第三週 Day 2 與其他所有單元
     const daysData = {
+        valentine: {
+            title: "🌹 情人節特別企劃：浪漫約會與禮物挑選",
+            words: [
+                { en: "Valentine's Day", zh: "情人節" },
+                { en: "Romantic", zh: "浪漫的" },
+                { en: "Gift / Present", zh: "禮物" },
+                { en: "Surprise", zh: "驚喜" },
+                { en: "Dinner date", zh: "晚餐約會" },
+                { en: "Special", zh: "特別的" },
+                { en: "Perfect", zh: "完美的" },
+                { en: "Together", zh: "在一起" },
+                { en: "Forever", zh: "永遠" },
+                { en: "Love", zh: "愛 / 情人" }
+            ],
+            formula: '"Happy Valentine\'s Day! Thank you for being with me. Let\'s enjoy our romantic dinner tonight."',
+            formulaZh: "(情人節快樂！謝謝你陪伴在我身邊。讓我們好好享受今晚的浪漫晚餐吧。)",
+            quizzes: [
+                { q: "1. 今天是七夕情人節，英文「Valentine's Day」最適合用來形容這天的形容詞是？", opts: ["Romantic (浪漫的)", "Scary (可怕的)", "Boring (無聊的)"], ans: 0 },
+                { q: "2. 如果你想為另一半挑選一份情人節「禮物」，英文單字是？", opts: ["Gift / Present", "Bill", "Garbage"], ans: 0 },
+                { q: "3. 安排了一個浪漫的「晚餐約會」，英文應該說？", opts: ["Dinner date", "Business meeting", "Airport customs"], ans: 0 },
+                { q: "4. 想表達「謝謝你一直陪在我身邊 (together)」，英文最道地的是？", opts: ["Thank you for being together.", "Thank you for leaving.", "Thank you for money."], ans: 0 },
+                { q: "5. 祝對方情人節快樂的標準祝福語是？", opts: ["Happy Valentine's Day!", "Happy New Year!", "Good morning!"], ans: 0 }
+            ],
+            answers: ['A', 'A', 'A', 'A', 'A'],
+            scenario: "今天是情人節，請寫下一句想對另一半說的情人節祝福或約會邀請英文句子！",
+            placeholder: "例如：Happy Valentine's Day! Let's enjoy our romantic dinner tonight."
+        },
         w3_2: {
             title: "第三週 Day 2：尋找尺寸與顏色 (Sizes & Colors)",
             words: [
-                { en: "Small / Medium / Large", zh: "小號 / 中號 / 大號" },
-                { en: "In stock", zh: "有現貨" },
-                { en: "Out of stock", zh: "缺貨 / 售完" },
-                { en: "Check", zh: "查看 / 確認" },
-                { en: "Backroom", zh: "後方倉庫" },
-                { en: "Small size", zh: "小尺寸" },
-                { en: "Large size", zh: "大尺寸" },
-                { en: "Different", zh: "不同的" },
-                { en: "Look for", zh: "尋找" },
-                { en: "Available", zh: "可買到的 / 有供應的" }
+                { en: "Small / Medium / Large", zh: "小號 / 中號 / 大號" }, { en: "In stock", zh: "有現貨" }, { en: "Out of stock", zh: "缺貨" }, { en: "Check", zh: "查看" }, { en: "Backroom", zh: "倉庫" },
+                { en: "Small size", zh: "小尺寸" }, { en: "Large size", zh: "大尺寸" }, { en: "Different", zh: "不同的" }, { en: "Look for", zh: "尋找" }, { en: "Available", zh: "可買到的" }
             ],
             formula: '"Do you have this in a medium size? Or do you have it in black?"',
             formulaZh: "(請問這件有中號的嗎？或者有黑色的嗎？)",
             quizzes: [
-                { q: "1. 當你問店員某個商品「有現貨嗎？」，英文習慣說「Is it...？」", opts: ["in stock", "out of stock", "on sale"], ans: 0 },
-                { q: "2. 如果店架上沒有你要的尺寸，店員通常會說「Let me check the...」去後面找找，指的是？", opts: ["backroom (倉庫)", "kitchen", "airport"], ans: 0 },
-                { q: "3. 「out of stock」在購物時代表什麼意思？", opts: ["特價優惠中", "缺貨 / 賣完了", "全新到貨"], ans: 1 },
-                { q: "4. 想詢問店員「請問這件有中號的嗎？」，中號的英文簡稱是？", opts: ["S (Small)", "M (Medium)", "L (Large)"], ans: 1 },
-                { q: "5. 「Look for」這個常用片語的意思是？", opts: ["尋找", "放棄", "忘記"], ans: 0 }
+                { q: "1. 問商品「有現貨嗎？」，習慣說：", opts: ["in stock", "out of stock", "on sale"], ans: 0 },
+                { q: "2. 店員去後面找找，會去哪里？", opts: ["backroom (倉庫)", "kitchen", "airport"], ans: 0 },
+                { q: "3. 「out of stock」代表：", opts: ["特價優惠", "缺貨 / 賣完了", "全新到貨"], ans: 1 },
+                { q: "4. 中號的英文簡稱是：", opts: ["S", "M", "L"], ans: 1 },
+                { q: "5. 「Look for」意思是：", opts: ["尋找", "放棄", "忘記"], ans: 0 }
             ],
             answers: ['A', 'A', 'B', 'B', 'A'],
-            scenario: "你在架上看到一件喜歡的外衣，但找不到你的尺寸 (Medium)，也沒有看到你想要的黑色，請向店員開口詢問。",
-            placeholder: "例如：Do you have this in a medium size? Or do you have it in black?"
+            scenario: "請向店員詢問是否有中號或黑色的商品。",
+            placeholder: "例如：Do you have this in a medium size?"
         },
         w3_1: {
             title: "第三週 Day 1：服飾試穿與穿搭實戰篇",
             words: [
-                { en: "Fitting room", zh: "試衣間" }, { en: "Mirror", zh: "鏡子" }, { en: "Look good", zh: "看起來好看" }, { en: "Fit", zh: "合身" }, { en: "Loose", zh: "寬鬆的" },
-                { en: "Tight", zh: "緊身的" }, { en: "Color", zh: "顏色" }, { en: "Style", zh: "款式" }, { en: "Take it", zh: "買下它" }, { en: "Decide", zh: "決定" }
+                { en: "Fitting room", zh: "試衣間" }, { en: "Mirror", zh: "鏡子" }, { en: "Look good", zh: "好看" }, { en: "Fit", zh: "合身" }, { en: "Loose", zh: "寬鬆" },
+                { en: "Tight", zh: "緊身" }, { en: "Color", zh: "顏色" }, { en: "Style", zh: "款式" }, { en: "Take it", zh: "買下" }, { en: "Decide", zh: "決定" }
             ],
             formula: '"Where is the fitting room? I would like to try this on."',
             formulaZh: "(請問試衣間在哪裡？我想試穿這件。)",
             quizzes: [
-                { q: "1. 想找試穿衣服的地方，問「Where is the...？」", opts: ["Fitting room", "Baggage claim", "Minibar"], ans: 0 },
-                { q: "2. 穿上覺得太緊了，形容詞用？", opts: ["Loose", "Tight", "Clean"], ans: 1 },
-                { q: "3. 決定要買下它了，跟店員說「I'll...」接哪兩個字？", opts: ["take it", "drop it", "lose it"], ans: 0 },
-                { q: "4. 問店員穿起來合不合身，用哪個單字？", opts: ["Fit", "Bill", "Form"], ans: 0 },
-                { q: "5. 稱讚「看起來很好看」，英文是？", opts: ["Look bad", "Look good", "Look small"], ans: 1 }
+                { q: "1. 問試衣間在哪：", opts: ["Fitting room", "Baggage claim", "Minibar"], ans: 0 },
+                { q: "2. 穿起來太緊用：", opts: ["Loose", "Tight", "Clean"], ans: 1 },
+                { q: "3. 決定買下說：", opts: ["take it", "drop it", "lose it"], ans: 0 },
+                { q: "4. 問合不合身用：", opts: ["Fit", "Bill", "Form"], ans: 0 },
+                { q: "5. 稱讚好看用：", opts: ["Look bad", "Look good", "Look small"], ans: 1 }
             ],
             answers: ['A', 'B', 'A', 'A', 'B'],
-            scenario: "詢問試衣間位置並表達想試穿外套。",
+            scenario: "詢問試衣間位置並試穿。",
             placeholder: "例如：Where is the fitting room? I would like to try this on."
         },
         w2_4: {
@@ -374,15 +413,15 @@
             formula: '"Excuse me, how much is this? Do you have it in another color?"',
             formulaZh: "(不好意思，這個多少錢？有其他顏色嗎？)",
             quizzes: [
-                { q: "1. 問店員「這個多少錢？」，最常用：", opts: ["How much is this?", "Where is airport?", "What is your name?"], ans: 0 },
-                { q: "2. 問「有沒有其他顏色？」，英文是：", opts: ["Do you have it in another color?", "Can I eat this food?", "Is it free?"], ans: 0 },
-                { q: "3. 餐廳看點餐品項的小本子叫：", opts: ["Menu", "Bill", "Receipt"], ans: 0 },
-                { q: "4. 準備點餐說「I am ready to...」接哪字？", opts: ["sleep", "order", "leave"], ans: 1 },
-                { q: "5. 結帳想「付款」，英文動詞是：", opts: ["Pay", "Play", "Stay"], ans: 0 }
+                { q: "1. 問價格：", opts: ["How much is this?", "Where is airport?", "What is your name?"], ans: 0 },
+                { q: "2. 問其他顏色：", opts: ["Do you have it in another color?", "Can I eat this?", "Is it free?"], ans: 0 },
+                { q: "3. 餐廳菜單：", opts: ["Menu", "Bill", "Receipt"], ans: 0 },
+                { q: "4. 準備點餐：", opts: ["sleep", "order", "leave"], ans: 1 },
+                { q: "5. 付款動詞：", opts: ["Pay", "Play", "Stay"], ans: 0 }
             ],
             answers: ['A', 'A', 'A', 'B', 'A'],
-            scenario: "問價格或準備點餐。",
-            placeholder: "例如：How much is this? 或 I am ready to order."
+            scenario: "問價格或點餐。",
+            placeholder: "例如：How much is this?"
         },
         w2_3: {
             title: "第二週 Day 3：精品退換貨與尺寸溝通",
@@ -393,15 +432,15 @@
             formula: '"This is a bit too small. Could I exchange it for a size up?"',
             formulaZh: "(這件有點太小了。我可以換大一號嗎？)",
             quizzes: [
-                { q: "1. 發現外套太緊，想換「大一號」：", opts: ["Size down", "Size up", "Make it short"], ans: 1 },
-                { q: "2. 店鋪折抵額度叫：", opts: ["Store credit", "Tax refund", "Free gift"], ans: 0 },
-                { q: "3. 購買證明或發票：", opts: ["Passport ID", "Proof of purchase", "Hotel reservation"], ans: 1 },
-                { q: "4. 包包有瑕疵是：", opts: ["Defective", "Perfect", "Expensive"], ans: 0 },
-                { q: "5. 全新未拆封原狀：", opts: ["Second-hand style", "Original condition", "Open box item"], ans: 1 }
+                { q: "1. 換大一號：", opts: ["Size down", "Size up", "Make it short"], ans: 1 },
+                { q: "2. 購物金：", opts: ["Store credit", "Tax refund", "Free gift"], ans: 0 },
+                { q: "3. 購買證明：", opts: ["Passport ID", "Proof of purchase", "Hotel reservation"], ans: 1 },
+                { q: "4. 有瑕疵：", opts: ["Defective", "Perfect", "Expensive"], ans: 0 },
+                { q: "5. 原狀：", opts: ["Second-hand", "Original condition", "Open box"], ans: 1 }
             ],
             answers: ['B', 'A', 'B', 'A', 'B'],
-            scenario: "鞋子買回家太小了，拿收據去換大一號。",
-            placeholder: "例如：This is too small. Could I exchange it for a size up?"
+            scenario: "換大一號尺寸。",
+            placeholder: "例如：Could I exchange it for a size up?"
         },
         w2_2: {
             title: "第二週 Day 2：綜合購物與美食餐飲",
@@ -412,131 +451,130 @@
             formula: '"Do you have this in my size? I would like to try it on."',
             formulaZh: "(請問這件有我的尺寸嗎？我想試穿看看。)",
             quizzes: [
-                { q: "1. 詢問辦理「退稅」：", opts: ["Can I get a tax refund here?", "Do you have discount?", "Where is baggage claim?"], ans: 0 },
-                { q: "2. 表達「我想試穿看看」：", opts: ["Put away", "Try on", "Take off"], ans: 1 },
-                { q: "3. Dietary restriction 是詢問：", opts: ["預算限制", "飲食忌口或過敏原", "服裝規定"], ans: 1 },
-                { q: "4. 招牌菜英文是：", opts: ["Signature dish", "Fast food", "Daily bill"], ans: 0 },
-                { q: "5. 有訂位報到時說：", opts: ["I want food now.", "I have a reservation under...", "Give me bill."], ans: 1 }
+                { q: "1. 退稅：", opts: ["Can I get a tax refund here?", "Do you have discount?", "Where is baggage claim?"], ans: 0 },
+                { q: "2. 試穿：", opts: ["Put away", "Try on", "Take off"], ans: 1 },
+                { q: "3. Dietary restriction：", opts: ["預算限制", "飲食忌口或過敏原", "服裝規定"], ans: 1 },
+                { q: "4. 招牌菜：", opts: ["Signature dish", "Fast food", "Daily bill"], ans: 0 },
+                { q: "5. 訂位報到：", opts: ["I want food now.", "I have a reservation under...", "Give me bill."], ans: 1 }
             ],
             answers: ['A', 'B', 'B', 'A', 'B'],
-            scenario: "試穿衣服或詢問招牌菜。",
-            placeholder: "例如：Do you have this in my size? I'd like to try it on."
+            scenario: "試穿或詢問招牌菜。",
+            placeholder: "例如：Do you have this in my size?"
         },
         w2_1: {
             title: "第二週 Day 1：愛馬仕購物與配貨實戰",
             words: [
-                { en: "Quota", zh: "配額限制" }, { en: "Pre-spend", zh: "配貨金額" }, { en: "Calfskin", zh: "牛皮" }, { en: "Goatskin", zh: "羊皮" }, { en: "Sandals", zh: "涼鞋/拖鞋" },
+                { en: "Quota", zh: "配額限制" }, { en: "Pre-spend", zh: "配貨金額" }, { en: "Calfskin", zh: "牛皮" }, { en: "Goatskin", zh: "羊皮" }, { en: "Sandals", zh: "涼鞋" },
                 { en: "Silk scarf", zh: "絲巾" }, { en: "Availability", zh: "庫存情況" }, { en: "Wishlist", zh: "心願清單" }, { en: "Associate", zh: "銷售顧問" }, { en: "Inquire", zh: "詢問" }
             ],
             formula: '"I am looking for Oran sandals in goatskin, and I\'d like to inquire about silk scarves."',
             formulaZh: "(我正在尋找羊皮 Oran 拖鞋，同時也想詢問絲巾。)",
             quizzes: [
-                { q: "1. 店員常提到的「Quota」是指：", opts: ["購物折扣", "熱門包款的配額限制", "退稅手續費"], ans: 1 },
-                { q: "2. 詢問有無「庫存/現貨」，用：", opts: ["Availability", "Pre-spend", "Discount"], ans: 0 },
-                { q: "3. 「羊皮」英文是：", opts: ["Epsom calfskin", "Goatskin / Chevre", "Canvas"], ans: 1 },
-                { q: "4. 想要的配件清單叫：", opts: ["Wishlist", "Receipt", "Invoice"], ans: 0 },
-                { q: "5. 「Inquire about」意思是：", opts: ["抱怨客訴", "詢問 / 打聽關於...", "退貨換貨"], ans: 1 }
+                { q: "1. Quota 是指：", opts: ["折扣", "熱門包款配額限制", "退稅"], ans: 1 },
+                { q: "2. 庫存現貨：", opts: ["Availability", "Pre-spend", "Discount"], ans: 0 },
+                { q: "3. 羊皮：", opts: ["Epsom", "Goatskin / Chevre", "Canvas"], ans: 1 },
+                { q: "4. 清單：", opts: ["Wishlist", "Receipt", "Invoice"], ans: 0 },
+                { q: "5. Inquire about：", opts: ["抱怨", "詢問 / 打聽關于...", "退貨"], ans: 1 }
             ],
             answers: ['B', 'A', 'B', 'A', 'B'],
-            scenario: "向愛馬仕銷售顧問打招呼，表達想找羊皮拖鞋並詢問絲巾庫存。",
-            placeholder: "例如：I am looking for Oran sandals in goatskin..."
+            scenario: "向愛馬仕 SA 詢問羊皮拖鞋與絲巾。",
+            placeholder: "例如：I am looking for Oran sandals..."
         },
         w1_5: {
-            title: "第一週 Day 5：帳單金額有誤 (Billing Issue)",
+            title: "第一週 Day 5：帳單金額有誤",
             words: [
                 { en: "Bill", zh: "帳單" }, { en: "Mistake", zh: "錯誤" }, { en: "Minibar", zh: "迷你吧" }, { en: "Charge", zh: "費用" }, { en: "Check", zh: "檢查" }
             ],
-            formula: '"Excuse me, I think there\'s a mistake on my bill. I didn\'t use the minibar."',
-            formulaZh: "(不好意思，我覺得我的帳單有錯誤。我沒有使用迷你吧。)",
+            formula: '"Excuse me, I think there\'s a mistake on my bill."',
+            formulaZh: "(不好意思，我覺得我的帳單有錯誤。)",
             quizzes: [
-                { q: "1. 飯店的「帳單」英文是：", opts: ["Bill", "Book", "Bag"], ans: 0 },
-                { q: "2. 帳單有「錯誤」用：", opts: ["Success", "Mistake", "Perfect"], ans: 1 },
-                { q: "3. 冰箱零食飲料區稱：", opts: ["Minibar", "Kitchen", "Coffee shop"], ans: 0 },
-                { q: "4. 「I didn't use...」意思是：", opts: ["我想要使用...", "我沒有使用...", "你可以幫我用..."], ans: 1 },
-                { q: "5. 反應帳單有誤開頭：", opts: ["You are wrong.", "Give me money.", "Excuse me, I think there's a mistake..."], ans: 2 }
+                { q: "1. 帳單：", opts: ["Bill", "Book", "Bag"], ans: 0 },
+                { q: "2. 錯誤：", opts: ["Success", "Mistake", "Perfect"], ans: 1 },
+                { q: "3. 迷你吧：", opts: ["Minibar", "Kitchen", "Shop"], ans: 0 },
+                { q: "4. 沒使用：", opts: ["I used", "I didn't use", "I want"], ans: 1 },
+                { q: "5. 反應開頭：", opts: ["You are wrong", "Give money", "Excuse me, I think there's a mistake"], ans: 2 }
             ],
             answers: ['A', 'B', 'A', 'B', 'C'],
-            scenario: "退房時發現帳單多收了迷你吧費用，向櫃檯反應。",
+            scenario: "反應帳單金額有誤。",
             placeholder: "例如：Excuse me, I think there's a mistake on my bill."
         },
         w1_4: {
             title: "第一週 Day 4：寄放行李與延遲退房",
             words: [
-                { en: "Luggage", zh: "行李" }, { en: "Leave", zh: "放置" }, { en: "Late", zh: "晚的" }, { en: "Checkout", zh: "退房" }, { en: "Possible", zh: "可能的" }
+                { en: "Luggage", zh: "行李" }, { en: "Leave", zh: "放置" }, { en: "Late", zh: "晚的" }, { en: "Checkout", zh: "退房" }, { en: "Possible", zh: "可能" }
             ],
-            formula: '"Could I leave my luggage here for a few hours?"',
-            formulaZh: "(我可以把行李寄放在這裡幾個小時嗎？)",
+            formula: '"Could I leave my luggage here?"',
+            formulaZh: "(我可以寄放行李嗎？)",
             quizzes: [
-                { q: "1. 「行李」英文是：", opts: ["Luggage", "Ticket", "Passport"], ans: 0 },
-                { q: "2. 問「延遲退房」是：", opts: ["Early check-in", "Late checkout", "Fast booking"], ans: 1 },
-                { q: "3. 「Is it possible to...」意思是：", opts: ["...是不可能的嗎？", "...有可能嗎？ / 可以...嗎？", "誰可以..."], ans: 1 },
-                { q: "4. 寄放行李的動詞是：", opts: ["Take", "Make", "Leave"], ans: 2 },
-                { q: "5. 「a few hours」意思是：", opts: ["幾個小時", "幾天", "幾分鐘"], ans: 0 }
+                { q: "1. 行李：", opts: ["Luggage", "Ticket", "Passport"], ans: 0 },
+                { q: "2. 延遲退房：", opts: ["Early check-in", "Late checkout", "Fast booking"], ans: 1 },
+                { q: "3. Is it possible to...：", opts: ["不可能", "有可能嗎 / 可以嗎", "誰可以"], ans: 1 },
+                { q: "4. 寄放動詞：", opts: ["Take", "Make", "Leave"], ans: 2 },
+                { q: "5. a few hours：", opts: ["幾小時", "幾天", "幾分鐘"], ans: 0 }
             ],
             answers: ['A', 'B', 'B', 'C', 'A'],
-            scenario: "退房後想把行李寄放在櫃檯幾小時。",
-            placeholder: "例如：Could I leave my luggage here for a few hours?"
+            scenario: "寄放行李。",
+            placeholder: "例如：Could I leave my luggage here?"
         },
         w1_3: {
             title: "第一週 Day 3：被反鎖或遺失房卡",
             words: [
                 { en: "Locked out", zh: "被反鎖" }, { en: "Inside", zh: "裡面" }, { en: "Lost", zh: "遺失" }, { en: "Help", zh: "幫忙" }, { en: "Door", zh: "門" }
             ],
-            formula: '"I left my key card inside the room, and I\'m locked out. Could you help me?"',
-            formulaZh: "(我把房卡留在房間裡了，被反鎖在外頭。可以請你幫幫我嗎？)",
+            formula: '"I\'m locked out. Could you help me?"',
+            formulaZh: "(我被反鎖在外頭。可以請你幫幫我嗎？)",
             quizzes: [
-                { q: "1. 「被反鎖在外面」片語：", opts: ["Locked out", "Locked in", "Closed down"], ans: 0 },
-                { q: "2. 房卡「遺失了」用：", opts: ["Found", "Lost", "Bought"], ans: 1 },
-                { q: "3. 「inside the room」意思是：", opts: ["房間外面", "房間裡面", "飯店大廳"], ans: 1 },
-                { q: "4. 請求協助說：", opts: ["Could you help me?", "Can you leave me?", "Do you know me?"], ans: 0 },
-                { q: "5. 「door」意思是：", opts: ["窗戶", "鑰匙", "門"], ans: 2 }
+                { q: "1. 被反鎖：", opts: ["Locked out", "Locked in", "Closed"], ans: 0 },
+                { q: "2. 遺失：", opts: ["Found", "Lost", "Bought"], ans: 1 },
+                { q: "3. inside the room：", opts: ["外面", "裡面", "大廳"], ans: 1 },
+                { q: "4. 請求協助：", opts: ["Could you help me?", "Can you leave", "Do you know"], ans: 0 },
+                { q: "5. door：", opts: ["窗戶", "鑰匙", "門"], ans: 2 }
             ],
             answers: ['A', 'B', 'B', 'A', 'C'],
-            scenario: "房卡留在房內被反鎖，向櫃檯求助。",
-            placeholder: "例如：I left my key card inside the room, and I'm locked out."
+            scenario: "被反鎖求助。",
+            placeholder: "例如：I'm locked out. Could you help me?"
         },
         w1_2: {
             title: "第一週 Day 2：要求換房間",
             words: [
                 { en: "Noisy", zh: "吵雜" }, { en: "Small", zh: "太小" }, { en: "Smelly", zh: "有異味" }, { en: "Another", zh: "另一間" }, { en: "Quiet", zh: "安靜" }
             ],
-            formula: '"Could I please move to another room? It\'s a bit too noisy."',
-            formulaZh: "(可以請我換到另一間房間嗎？這裡有點太吵了。)",
+            formula: '"Could I please move to another room?"',
+            formulaZh: "(可以請我換到另一間房間嗎？)",
             quizzes: [
-                { q: "1. 「吵雜」形容詞：", opts: ["Quiet", "Noisy", "Clean"], ans: 1 },
-                { q: "2. 表達「太小了」：", opts: ["Big", "Small", "High"], ans: 1 },
-                { q: "3. 「another room」意思是：", opts: ["原來的房間", "豪華套房", "另一間房間"], ans: 2 },
-                { q: "4. 房間有異味用：", opts: ["Smelly", "Sweet", "Fresh"], ans: 0 },
-                { q: "5. 禮貌要求換房間開頭：", opts: ["You must change...", "Could I please move to...", "Give me..."], ans: 1 }
+                { q: "1. 吵雜：", opts: ["Quiet", "Noisy", "Clean"], ans: 1 },
+                { q: "2. 太小：", opts: ["Big", "Small", "High"], ans: 1 },
+                { q: "3. another room：", opts: ["原房間", "套房", "另一間房"], ans: 2 },
+                { q: "4. 異味：", opts: ["Smelly", "Sweet", "Fresh"], ans: 0 },
+                { q: "5. 禮貌換房：", opts: ["You must", "Could I please move to", "Give me"], ans: 1 }
             ],
             answers: ['B', 'B', 'C', 'A', 'B'],
-            scenario: "房間太吵要求換房。",
-            placeholder: "例如：Could I please move to another room? It's a bit too noisy."
+            scenario: "要求換房間。",
+            placeholder: "例如：Could I please move to another room?"
         },
         w1_1: {
             title: "第一週 Day 1：房間設備故障",
             words: [
-                { en: "Air conditioner", zh: "空調" }, { en: "Shower", zh: "淋浴/熱水" }, { en: "Light", zh: "燈光" }, { en: "TV", zh: "電視" }, { en: "Wi-Fi", zh: "網路" }
+                { en: "Air conditioner", zh: "空調" }, { en: "Shower", zh: "淋浴" }, { en: "Light", zh: "燈光" }, { en: "TV", zh: "電視" }, { en: "Wi-Fi", zh: "網路" }
             ],
-            formula: '"Excuse me, the Wi-Fi in my room isn\'t working."',
-            formulaZh: "(不好意思，我房間裡的網路故障不能用了。)",
+            formula: '"The Wi-Fi in my room isn\'t working."',
+            formulaZh: "(我房間裡的網路故障不能用了。)",
             quizzes: [
-                { q: "1. 房間「冷氣/空調」：", opts: ["Fan", "Air conditioner", "Heater"], ans: 1 },
-                { q: "2. 「網路壞了」用：", opts: ["Wi-Fi", "Phone", "Radio"], ans: 0 },
-                { q: "3. 反應故障最禮貌開頭：", opts: ["Hey, listen to me", "Excuse me", "Stop it"], ans: 1 },
-                { q: "4. 「淋浴設備」英文：", opts: ["Bath", "Shower", "Water"], ans: 1 },
-                { q: "5. 「isn't working」意思是：", opts: ["正在工作", "非常乾淨", "故障不能用了"], ans: 2 }
+                { q: "1. 冷氣空調：", opts: ["Fan", "Air conditioner", "Heater"], ans: 1 },
+                { q: "2. 網路壞了：", opts: ["Wi-Fi", "Phone", "Radio"], ans: 0 },
+                { q: "3. 禮貌開頭：", opts: ["Hey", "Excuse me", "Stop"], ans: 1 },
+                { q: "4. 淋浴：", opts: ["Bath", "Shower", "Water"], ans: 1 },
+                { q: "5. isn't working：", opts: ["工作", "乾淨", "故障不能用"], ans: 2 }
             ],
             answers: ['B', 'A', 'B', 'B', 'C'],
-            scenario: "房間空調或網路故障向櫃檯反應。",
-            placeholder: "例如：Excuse me, the air conditioner in my room isn't working."
+            scenario: "設備故障反應。",
+            placeholder: "例如：The Wi-Fi in my room isn't working."
         }
     };
 
     let globalLineUrl = "";
     let finalScore = 0;
     let finalStreak = 1;
-    let activeDayKey = 'w3_2';
 
     function updateStreakAndReward() {
         const lastCheckDate = localStorage.getItem('ava_last_check_date');
@@ -587,9 +625,8 @@
     }
 
     function renderDay(dayKey) {
-        activeDayKey = dayKey;
         const data = daysData[dayKey];
-        let html = `<div style="font-weight: bold; color: #34495e; margin-bottom: 15px; font-size: 16px;">📌 ${data.title}</div>`;
+        let html = `<div style="font-weight: bold; color: #c71585; margin-bottom: 15px; font-size: 16px;">📌 ${data.title}</div>`;
 
         html += `<div class="section-title">📚 核心單字清單（點擊 🔊 聽發音）</div><ul>`;
         data.words.forEach(w => {
@@ -611,17 +648,15 @@
         });
 
         html += `<div class="task-box">
-            <div style="font-weight: bold; color: #d35400;">🎯 情境造句挑戰</div>
+            <div style="font-weight: bold; color: #c71585;">🎯 練習造句挑戰</div>
             <div class="scenario-desc"><b>💡 練習場景：</b>${data.scenario}</div>
             <textarea id="userAnswer_${dayKey}" placeholder="${data.placeholder}"></textarea>
-            <button class="action-btn" onclick="gradeAndPreview('${dayKey}')">🔍 檢查答案與預覽打卡內容</button>
-            <div id="previewArea_${dayKey}" style="margin-top:15px; background:#f4f6f7; padding:12px; border-radius:6px; font-size:14px; display:none; border:1px solid #bdc3c7;"></div>
+            <button class="action-btn" onclick="gradeAndPreview('${dayKey}')">🔍 檢查答案與預覽驚喜</button>
+            <div id="previewArea_${dayKey}" style="margin-top:15px; background:#fff; padding:12px; border-radius:6px; font-size:14px; display:none; border:1px solid #ffb6c1;"></div>
             <button class="line-btn" id="lineSendBtn_${dayKey}" onclick="sendToLine('${dayKey}')">🚀 確認無誤，一鍵 Line 打卡送出！</button>
         </div>`;
 
         document.getElementById('contentArea').innerHTML = html;
-        
-        // 同步下拉選單數值
         document.getElementById('daySelector').value = dayKey;
     }
 
@@ -629,8 +664,8 @@
         renderDay(dayVal);
     }
 
-    // 初始化渲染第三週 Day 2
-    renderDay('w3_2');
+    // 初始化渲染情人節特別企劃
+    renderDay('valentine');
 
     function gradeAndPreview(dayKey) {
         const data = daysData[dayKey];
@@ -683,16 +718,16 @@
         const previewArea = document.getElementById(`previewArea_${dayKey}`);
         previewArea.style.display = 'block';
         previewArea.innerHTML = `
-            <b>🔍 智慧批改與打卡內容預覽：</b><br>
+            <b>🔍 智慧批改與預覽：</b><br>
             • 單元：<b>${data.title}</b><br>
             • 選擇題得分：<b>${score} 分</b><br>
             • 連續打卡：<b>第 ${finalStreak} 天</b><br>
-            • 你的造句內容：<br><span style="color: #2980b9; font-style: italic;">"${answerText}"</span><br>
-            <hr style="border:0; border-top:1px solid #ccc; margin:8px 0;">
-            ✨ 老師評語：尺寸與顏色詢問表達非常清晰道地！點擊下方按鈕即可正式打卡。
+            • 你的練習：<br><span style="color: #c71585; font-style: italic;">"${answerText}"</span><br>
+            <hr style="border:0; border-top:1px solid #ffb6c1; margin:8px 0;">
+            🌹 甜蜜評語：寫得太棒了！情人節快樂，準備好解鎖驚喜了！
         `;
 
-        const lineMessage = `【Ava 英文打卡 🌟 ${data.title}】\n🔥 連續打卡：第 ${finalStreak} 天\n🎯 選擇題得分：${finalScore} 分\n✍️ 造句練習：\n${answerText}`;
+        const lineMessage = `【Ava 英文打卡 🌹 情人節特別企劃】\n🔥 連續打卡：第 ${finalStreak} 天\n🎯 選擇題得分：${finalScore} 分\n✍️ 練習內容：\n${answerText}`;
         globalLineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(lineMessage)}`;
 
         document.getElementById(`lineSendBtn_${dayKey}`).style.display = 'block';
@@ -725,7 +760,16 @@
         updateStreakAndReward();
 
         let rewardText = currentStreak >= 5 ? "<br>🎁 <b>恭喜解鎖實體心願：衣服一件！</b>" : `<br>距離解鎖衣服還差 ${5 - (currentStreak % 5 === 0 ? 5 : currentStreak % 5)} 天！`;
-        document.getElementById('modalText').innerHTML = `單元完成！得分 <b>${finalScore} 分</b><br>🔥 連續打卡 <b>${currentStreak} 天</b>！${rewardText}`;
+        
+        // 帶有情人節驚喜的彈窗內容
+        document.getElementById('modalText').innerHTML = `
+            <p>測驗順利通關！得分：<b>${finalScore} 分</b> | 連續打卡：<b>${currentStreak} 天</b>${rewardText}</p>
+            <div class="surprise-box">
+                🎁 <b>解鎖情人節隱藏驚喜：</b><br>
+                「祝我們家最認真、最漂亮的 Ava 七夕情人節快樂！✨<br>
+                不管英文或生活，有你相伴就是最完美的風景。今晚的浪漫約會準備好囉！❤️」
+            </div>
+        `;
         document.getElementById('successModal').style.display = 'flex';
     }
 

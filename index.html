@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ava 英文能力升級計畫 - 情人節浪漫專屬篇</title>
+    <title>Ava 英文能力升級計畫 - VIP預約與鑑賞篇</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #fff0f5; /* 浪漫粉色系背景 */
+            background-color: #f7f9fc;
             color: #333;
             margin: 0;
             padding: 20px;
@@ -20,27 +20,25 @@
             background: #ffffff;
             padding: 24px;
             border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(233, 30, 99, 0.15);
-            border: 2px solid #ffb6c1;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
         h1 {
             font-size: 20px;
-            color: #c71585;
+            color: #2c3e50;
             text-align: center;
             margin-bottom: 5px;
         }
         .subtitle {
             font-size: 14px;
-            color: #db7093;
+            color: #7f8c8d;
             text-align: center;
             margin-bottom: 15px;
-            font-weight: bold;
         }
         .nav-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #ffe4e1;
+            background: #e8f4f8;
             padding: 10px;
             border-radius: 8px;
             margin-bottom: 15px;
@@ -49,15 +47,15 @@
             padding: 6px 10px;
             font-size: 14px;
             border-radius: 6px;
-            border: 1px solid #ffb6c1;
+            border: 1px solid #b0c4de;
             background: #fff;
             cursor: pointer;
             max-width: 220px;
         }
         .streak-badge {
-            background-color: #fff0f5;
-            color: #c71585;
-            border: 1px solid #ffb6c1;
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
             text-align: center;
             padding: 8px;
             border-radius: 8px;
@@ -66,8 +64,8 @@
             margin-bottom: 15px;
         }
         .reward-box {
-            background: #fff5ee;
-            border: 1px solid #ffdab9;
+            background: #eafaf1;
+            border: 1px solid #a3e4d7;
             padding: 12px 15px;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -75,36 +73,36 @@
         .reward-title {
             font-size: 14px;
             font-weight: bold;
-            color: #d2691e;
+            color: #117a65;
             display: flex;
             justify-content: space-between;
             margin-bottom: 8px;
         }
         .progress-bar-container {
             width: 100%;
-            background: #ffe4c4;
+            background: #d1f2eb;
             border-radius: 8px;
             height: 12px;
             overflow: hidden;
         }
         .progress-bar-fill {
             height: 100%;
-            background: #ff69b4;
+            background: #27ae60;
             width: 0%;
             transition: width 0.5s ease-in-out;
         }
         .reward-desc {
             font-size: 12px;
-            color: #cd853f;
+            color: #16a085;
             margin-top: 6px;
             text-align: right;
         }
         .section-title {
             font-size: 16px;
-            color: #c71585;
+            color: #2980b9;
             margin-top: 20px;
             margin-bottom: 10px;
-            border-bottom: 2px solid #ffb6c1;
+            border-bottom: 2px solid #ecf0f1;
             padding-bottom: 5px;
         }
         ul {
@@ -116,7 +114,7 @@
             font-size: 15px;
         }
         .audio-btn {
-            background-color: #ff69b4;
+            background-color: #3498db;
             color: white;
             border: none;
             border-radius: 4px;
@@ -127,19 +125,19 @@
             transition: background 0.2s;
         }
         .audio-btn:hover {
-            background-color: #ff1493;
+            background-color: #2980b9;
         }
         .formula-box {
-            background: #fff0f5;
-            border-left: 4px solid #ff69b4;
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
             padding: 12px;
             border-radius: 4px;
             font-size: 15px;
             margin: 15px 0;
         }
         .quiz-box {
-            background: #fffdfd;
-            border: 1px solid #ffccd5;
+            background: #fdfefe;
+            border: 1px solid #d5dbdb;
             padding: 15px;
             border-radius: 8px;
             margin-top: 15px;
@@ -148,7 +146,7 @@
             font-weight: bold;
             font-size: 14px;
             margin-bottom: 8px;
-            color: #c71585;
+            color: #34495e;
         }
         .options label {
             display: block;
@@ -165,18 +163,18 @@
         .incorrect { color: #c0392b; }
 
         .task-box {
-            background: #fff5f8;
-            border: 1px dashed #ff69b4;
+            background: #fff9e6;
+            border: 1px dashed #f1c40f;
             padding: 15px;
             border-radius: 8px;
             margin-top: 20px;
         }
         .scenario-desc {
-            background: #ffe4e1;
-            border-left: 4px solid #ff1493;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
             padding: 10px;
             font-size: 13px;
-            color: #c71585;
+            color: #856404;
             margin-bottom: 10px;
             border-radius: 4px;
             line-height: 1.4;
@@ -185,7 +183,7 @@
             width: 100%;
             height: 70px;
             padding: 10px;
-            border: 1px solid #ffb6c1;
+            border: 1px solid #ccc;
             border-radius: 6px;
             box-sizing: border-box;
             font-size: 14px;
@@ -194,7 +192,7 @@
         }
         button.action-btn {
             width: 100%;
-            background-color: #ff69b4;
+            background-color: #2980b9;
             color: white;
             border: none;
             padding: 12px;
@@ -206,7 +204,7 @@
             transition: background 0.2s;
         }
         button.action-btn:hover {
-            background-color: #ff1493;
+            background-color: #1f618d;
         }
         button.line-btn {
             width: 100%;
@@ -225,8 +223,16 @@
         button.line-btn:hover {
             background-color: #05b34c;
         }
+        #previewArea {
+            margin-top: 15px;
+            background: #f4f6f7;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            display: none;
+            border: 1px solid #bdc3c7;
+        }
 
-        /* 浪漫驚喜彈窗樣式 */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -234,63 +240,46 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.5);
             justify-content: center;
             align-items: center;
             z-index: 1000;
         }
         .modal-card {
-            background: #fff0f5;
-            width: 85%;
-            max-width: 380px;
-            padding: 25px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
-            border: 3px solid #ff69b4;
-            animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        @keyframes popUp {
-            0% { transform: scale(0.7); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        .modal-card h2 { color: #c71585; margin-top: 0; font-size: 22px; }
-        .modal-card p { font-size: 14px; color: #555; line-height: 1.6; margin: 15px 0; }
-        .surprise-box {
             background: #ffffff;
-            border: 2px dashed #ff1493;
-            padding: 12px;
-            border-radius: 12px;
-            margin: 15px 0;
-            color: #d81b60;
-            font-weight: bold;
-            font-size: 15px;
+            width: 85%;
+            max-width: 350px;
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
+        .modal-card h2 { color: #27ae60; margin-top: 0; font-size: 22px; }
         .modal-btn {
-            background-color: #ff1493;
+            background-color: #06c755;
             color: white;
             border: none;
-            padding: 12px 20px;
-            border-radius: 10px;
+            padding: 10px 20px;
+            border-radius: 8px;
             font-size: 15px;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
-            margin-top: 10px;
-            box-shadow: 0 4px 10px rgba(255, 20, 147, 0.3);
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>💖 Ava 英文能力升級計畫</h1>
-    <div class="subtitle">🌹 特别企劃：情人節浪漫購物與約會篇</div>
+    <h1>🛍️ Ava 英文能力升級計畫</h1>
+    <div class="subtitle">第三週 Day 3：VIP預約與鑑賞篇</div>
 
     <div class="nav-bar">
-        <span style="font-size: 14px; font-weight: bold; color: #c71585;">📅 選擇天數：</span>
+        <span style="font-size: 14px; font-weight: bold; color: #2c3e50;">📅 選擇天數：</span>
         <select id="daySelector" onchange="switchDay(this.value)">
-            <option value="valentine" selected>🌹 情人節特別企劃：浪漫約會與禮物</option>
+            <option value="w3_3" selected>第三週 Day 3：VIP預約與鑑賞室</option>
+            <option value="valentine">🌹 情人節特別企劃</option>
             <option value="w3_2">第三週 Day 2：尋找尺寸與顏色</option>
             <option value="w3_1">第三週 Day 1：服飾試穿與更衣室</option>
             <option value="w2_4">第二週 Day 4：輕鬆逛街與點餐</option>
@@ -322,68 +311,80 @@
     <div id="contentArea"></div>
 </div>
 
-<!-- 破關驚喜彈窗 -->
 <div class="modal-overlay" id="successModal">
     <div class="modal-card">
-        <h2>💖 Happy Valentine's Day! 🌹</h2>
-        <div id="modalText">
-            <p>太棒了！測驗順利通關！</p>
-            <div class="surprise-box" id="surpriseContent">
-                🎁 <b>解鎖隱藏情人節驚喜：</b><br>
-                「祝我們家最認真、最漂亮的 Ava 情人節快樂！不管英文或生活，有你一路相伴就是最完美的風景。今晚的浪漫晚餐與心願禮物準備好囉！✨」
-            </div>
-        </div>
-        <button class="modal-btn" onclick="closeModalAndRedirect()">🚀 將甜蜜打卡與成果傳送到 Line！</button>
+        <h2>🎉 太棒了！打卡成功！</h2>
+        <p id="modalText">你已經完成今日挑戰！</p>
+        <button class="modal-btn" onclick="closeModalAndRedirect()">前往 Line 傳送打卡訊息 🚀</button>
     </div>
 </div>
 
 <script>
     const daysData = {
+        w3_3: {
+            title: "第三週 Day 3：VIP預約與鑑賞室 (VIP Room & Appointment)",
+            words: [
+                { en: "Appointment", zh: "預約 / 約定" },
+                { en: "VIP room", zh: "VIP貴賓室 / 私密鑑賞室" },
+                { en: "Private", zh: "私密的 / 專屬的" },
+                { en: "Exclusive", zh: "獨家發售的 / 高級限量的" },
+                { en: "Collection", zh: "系列新品 / 收藏系列" },
+                { en: "Showcase", zh: "展示 / 陳列櫃" },
+                { en: "Schedule", zh: "安排時間 / 行程表" },
+                { en: "Confirm", zh: "確認" },
+                { en: "Service", zh: "服務" },
+                { en: "Enjoy", zh: "享受 / 欣賞" }
+            ],
+            formula: '"I have an appointment to view the new collection in the VIP room."',
+            formulaZh: "(我有預約在 VIP 室鑑賞最新系列新品。)",
+            quizzes: [
+                { q: "1. 如果你提前跟銷售顧問約好時間去店裡，這個「預約」的英文單字是？", opts: ["Appointment", "Ticket", "Receipt"], ans: 0 },
+                { q: "2. 精品店內專門接待高級貴賓的私人空間，通常稱為？", opts: ["VIP room", "Public area", "Baggage claim"], ans: 0 },
+                { q: "3. 形容一件商品是「獨家、限量或高級會員專屬」的，英文常用哪個單字？", opts: ["Exclusive", "Cheap", "Common"], ans: 0 },
+                { q: "4. 設計師發表的一系列服飾或包款新品，英文稱作？", opts: ["Collection", "Menu", "Form"], ans: 0 },
+                { q: "5. 想表達「我有預約...」，開頭最標準的句型是？", opts: ["I have an appointment...", "I want to leave...", "Where is..."], ans: 0 }
+            ],
+            answers: ['A', 'A', 'A', 'A', 'A'],
+            scenario: "抵達精品店時，請向接待人員表明你有預約，想前往 VIP 室鑑賞最新系列新品。",
+            placeholder: "例如：I have an appointment to view the new collection in the VIP room."
+        },
         valentine: {
             title: "🌹 情人節特別企劃：浪漫約會與禮物挑選",
             words: [
-                { en: "Valentine's Day", zh: "情人節" },
-                { en: "Romantic", zh: "浪漫的" },
-                { en: "Gift / Present", zh: "禮物" },
-                { en: "Surprise", zh: "驚喜" },
-                { en: "Dinner date", zh: "晚餐約會" },
-                { en: "Special", zh: "特別的" },
-                { en: "Perfect", zh: "完美的" },
-                { en: "Together", zh: "在一起" },
-                { en: "Forever", zh: "永遠" },
-                { en: "Love", zh: "愛 / 情人" }
+                { en: "Valentine's Day", zh: "情人節" }, { en: "Romantic", zh: "浪漫的" }, { en: "Gift", zh: "禮物" }, { en: "Surprise", zh: "驚喜" }, { en: "Dinner date", zh: "晚餐約會" },
+                { en: "Special", zh: "特別的" }, { en: "Perfect", zh: "完美的" }, { en: "Together", zh: "在一起" }, { en: "Forever", zh: "永遠" }, { en: "Love", zh: "愛" }
             ],
-            formula: '"Happy Valentine\'s Day! Thank you for being with me. Let\'s enjoy our romantic dinner tonight."',
-            formulaZh: "(情人節快樂！謝謝你陪伴在我身邊。讓我們好好享受今晚的浪漫晚餐吧。)",
+            formula: '"Happy Valentine\'s Day! Let\'s enjoy our romantic dinner tonight."',
+            formulaZh: "(情人節快樂！讓我們好好享受今晚的浪漫晚餐吧。)",
             quizzes: [
-                { q: "1. 今天是七夕情人節，英文「Valentine's Day」最適合用來形容這天的形容詞是？", opts: ["Romantic (浪漫的)", "Scary (可怕的)", "Boring (無聊的)"], ans: 0 },
-                { q: "2. 如果你想為另一半挑選一份情人節「禮物」，英文單字是？", opts: ["Gift / Present", "Bill", "Garbage"], ans: 0 },
-                { q: "3. 安排了一個浪漫的「晚餐約會」，英文應該說？", opts: ["Dinner date", "Business meeting", "Airport customs"], ans: 0 },
-                { q: "4. 想表達「謝謝你一直陪在我身邊 (together)」，英文最道地的是？", opts: ["Thank you for being together.", "Thank you for leaving.", "Thank you for money."], ans: 0 },
-                { q: "5. 祝對方情人節快樂的標準祝福語是？", opts: ["Happy Valentine's Day!", "Happy New Year!", "Good morning!"], ans: 0 }
+                { q: "1. 形容情人節很浪漫用：", opts: ["Romantic", "Scary", "Boring"], ans: 0 },
+                { q: "2. 禮物英文是：", opts: ["Gift / Present", "Bill", "Garbage"], ans: 0 },
+                { q: "3. 晚餐約會是：", opts: ["Dinner date", "Business meeting", "Airport customs"], ans: 0 },
+                { q: "4. 陪伴彼此用：", opts: ["being together", "leaving", "money"], ans: 0 },
+                { q: "5. 情人節快樂祝福：", opts: ["Happy Valentine's Day!", "Happy New Year!", "Good morning!"], ans: 0 }
             ],
             answers: ['A', 'A', 'A', 'A', 'A'],
-            scenario: "今天是情人節，請寫下一句想對另一半說的情人節祝福或約會邀請英文句子！",
-            placeholder: "例如：Happy Valentine's Day! Let's enjoy our romantic dinner tonight."
+            scenario: "寫下一句情人節祝福或約會邀請英文句子。",
+            placeholder: "例如：Happy Valentine's Day! Let's enjoy our romantic dinner."
         },
         w3_2: {
             title: "第三週 Day 2：尋找尺寸與顏色 (Sizes & Colors)",
             words: [
-                { en: "Small / Medium / Large", zh: "小號 / 中號 / 大號" }, { en: "In stock", zh: "有現貨" }, { en: "Out of stock", zh: "缺貨" }, { en: "Check", zh: "查看" }, { en: "Backroom", zh: "倉庫" },
+                { en: "Small / Medium / Large", zh: "小/中/大號" }, { en: "In stock", zh: "有現貨" }, { en: "Out of stock", zh: "缺貨" }, { en: "Check", zh: "查看" }, { en: "Backroom", zh: "倉庫" },
                 { en: "Small size", zh: "小尺寸" }, { en: "Large size", zh: "大尺寸" }, { en: "Different", zh: "不同的" }, { en: "Look for", zh: "尋找" }, { en: "Available", zh: "可買到的" }
             ],
             formula: '"Do you have this in a medium size? Or do you have it in black?"',
             formulaZh: "(請問這件有中號的嗎？或者有黑色的嗎？)",
             quizzes: [
-                { q: "1. 問商品「有現貨嗎？」，習慣說：", opts: ["in stock", "out of stock", "on sale"], ans: 0 },
-                { q: "2. 店員去後面找找，會去哪里？", opts: ["backroom (倉庫)", "kitchen", "airport"], ans: 0 },
-                { q: "3. 「out of stock」代表：", opts: ["特價優惠", "缺貨 / 賣完了", "全新到貨"], ans: 1 },
-                { q: "4. 中號的英文簡稱是：", opts: ["S", "M", "L"], ans: 1 },
+                { q: "1. 問「有現貨嗎？」說：", opts: ["in stock", "out of stock", "on sale"], ans: 0 },
+                { q: "2. 店員去後面找找是去：", opts: ["backroom", "kitchen", "airport"], ans: 0 },
+                { q: "3. 「out of stock」代表：", opts: ["特價", "缺貨 / 賣完了", "新到貨"], ans: 1 },
+                { q: "4. 中號英文簡稱：", opts: ["S", "M", "L"], ans: 1 },
                 { q: "5. 「Look for」意思是：", opts: ["尋找", "放棄", "忘記"], ans: 0 }
             ],
             answers: ['A', 'A', 'B', 'B', 'A'],
-            scenario: "請向店員詢問是否有中號或黑色的商品。",
-            placeholder: "例如：Do you have this in a medium size?"
+            scenario: "向店員詢問是否有中號或黑色的商品。",
+            placeholder: "例如：Do you have this in a medium size? Or do you have it in black?"
         },
         w3_1: {
             title: "第三週 Day 1：服飾試穿與穿搭實戰篇",
@@ -459,7 +460,7 @@
             ],
             answers: ['A', 'B', 'B', 'A', 'B'],
             scenario: "試穿或詢問招牌菜。",
-            placeholder: "例如：Do you have this in my size?"
+            placeholder: "例如：Do you have this in my size? I'd like to try it on."
         },
         w2_1: {
             title: "第二週 Day 1：愛馬仕購物與配貨實戰",
@@ -478,7 +479,7 @@
             ],
             answers: ['B', 'A', 'B', 'A', 'B'],
             scenario: "向愛馬仕 SA 詢問羊皮拖鞋與絲巾。",
-            placeholder: "例如：I am looking for Oran sandals..."
+            placeholder: "例如：I am looking for Oran sandals in goatskin..."
         },
         w1_5: {
             title: "第一週 Day 5：帳單金額有誤",
@@ -626,7 +627,7 @@
 
     function renderDay(dayKey) {
         const data = daysData[dayKey];
-        let html = `<div style="font-weight: bold; color: #c71585; margin-bottom: 15px; font-size: 16px;">📌 ${data.title}</div>`;
+        let html = `<div style="font-weight: bold; color: #2980b9; margin-bottom: 15px; font-size: 16px;">📌 ${data.title}</div>`;
 
         html += `<div class="section-title">📚 核心單字清單（點擊 🔊 聽發音）</div><ul>`;
         data.words.forEach(w => {
@@ -648,11 +649,11 @@
         });
 
         html += `<div class="task-box">
-            <div style="font-weight: bold; color: #c71585;">🎯 練習造句挑戰</div>
+            <div style="font-weight: bold; color: #d35400;">🎯 練習造句挑戰</div>
             <div class="scenario-desc"><b>💡 練習場景：</b>${data.scenario}</div>
             <textarea id="userAnswer_${dayKey}" placeholder="${data.placeholder}"></textarea>
-            <button class="action-btn" onclick="gradeAndPreview('${dayKey}')">🔍 檢查答案與預覽驚喜</button>
-            <div id="previewArea_${dayKey}" style="margin-top:15px; background:#fff; padding:12px; border-radius:6px; font-size:14px; display:none; border:1px solid #ffb6c1;"></div>
+            <button class="action-btn" onclick="gradeAndPreview('${dayKey}')">🔍 檢查答案與預覽打卡內容</button>
+            <div id="previewArea_${dayKey}" style="margin-top:15px; background:#f4f6f7; padding:12px; border-radius:6px; font-size:14px; display:none; border:1px solid #bdc3c7;"></div>
             <button class="line-btn" id="lineSendBtn_${dayKey}" onclick="sendToLine('${dayKey}')">🚀 確認無誤，一鍵 Line 打卡送出！</button>
         </div>`;
 
@@ -664,8 +665,8 @@
         renderDay(dayVal);
     }
 
-    // 初始化渲染情人節特別企劃
-    renderDay('valentine');
+    // 初始化渲染第三週 Day 3
+    renderDay('w3_3');
 
     function gradeAndPreview(dayKey) {
         const data = daysData[dayKey];
@@ -718,16 +719,16 @@
         const previewArea = document.getElementById(`previewArea_${dayKey}`);
         previewArea.style.display = 'block';
         previewArea.innerHTML = `
-            <b>🔍 智慧批改與預覽：</b><br>
+            <b>🔍 智慧批改與打卡內容預覽：</b><br>
             • 單元：<b>${data.title}</b><br>
             • 選擇題得分：<b>${score} 分</b><br>
             • 連續打卡：<b>第 ${finalStreak} 天</b><br>
-            • 你的練習：<br><span style="color: #c71585; font-style: italic;">"${answerText}"</span><br>
-            <hr style="border:0; border-top:1px solid #ffb6c1; margin:8px 0;">
-            🌹 甜蜜評語：寫得太棒了！情人節快樂，準備好解鎖驚喜了！
+            • 你的練習內容：<br><span style="color: #2980b9; font-style: italic;">"${answerText}"</span><br>
+            <hr style="border:0; border-top:1px solid #ccc; margin:8px 0;">
+            ✨ 老師評語：VIP 預約與鑑賞的英文表達非常高級且道地！點擊下方按鈕即可正式打卡。
         `;
 
-        const lineMessage = `【Ava 英文打卡 🌹 情人節特別企劃】\n🔥 連續打卡：第 ${finalStreak} 天\n🎯 選擇題得分：${finalScore} 分\n✍️ 練習內容：\n${answerText}`;
+        const lineMessage = `【Ava 英文打卡 🌟 ${data.title}】\n🔥 連續打卡：第 ${finalStreak} 天\n🎯 選擇題得分：${finalScore} 分\n✍️ 造句練習：\n${answerText}`;
         globalLineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(lineMessage)}`;
 
         document.getElementById(`lineSendBtn_${dayKey}`).style.display = 'block';
@@ -759,17 +760,8 @@
 
         updateStreakAndReward();
 
-        let rewardText = currentStreak >= 5 ? "<br>🎁 <b>恭喜解鎖實體心願：衣服一件！</b>" : `<br>距離解鎖衣服還差 ${5 - (currentStreak % 5 === 0 ? 5 : currentStreak % 5)} 天！`;
-        
-        // 帶有情人節驚喜的彈窗內容
-        document.getElementById('modalText').innerHTML = `
-            <p>測驗順利通關！得分：<b>${finalScore} 分</b> | 連續打卡：<b>${currentStreak} 天</b>${rewardText}</p>
-            <div class="surprise-box">
-                🎁 <b>解鎖情人節隱藏驚喜：</b><br>
-                「祝我們家最認真、最漂亮的 Ava 七夕情人節快樂！✨<br>
-                不管英文或生活，有你相伴就是最完美的風景。今晚的浪漫約會準備好囉！❤️」
-            </div>
-        `;
+        let rewardText = currentStreak >= 5 ? "<br>🎁 <b>🎁 恭喜解鎖實體心願：衣服一件！</b>" : `<br>距離解鎖衣服還差 ${5 - (currentStreak % 5 === 0 ? 5 : currentStreak % 5)} 天！`;
+        document.getElementById('modalText').innerHTML = `單元完成！得分 <b>${finalScore} 分</b><br>🔥 連續打卡 <b>${currentStreak} 天</b>！${rewardText}`;
         document.getElementById('successModal').style.display = 'flex';
     }
 

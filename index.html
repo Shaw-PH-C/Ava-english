@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ava 英文能力升級計畫 - VIP預約與鑑賞篇</title>
+    <title>Ava 英文能力升級計畫 - 限量新品與預購篇</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -273,12 +273,13 @@
 
 <div class="container">
     <h1>🛍️ Ava 英文能力升級計畫</h1>
-    <div class="subtitle">第三週 Day 3：VIP預約與鑑賞篇</div>
+    <div class="subtitle">第三週 Day 4：限量新品與預購篇</div>
 
     <div class="nav-bar">
         <span style="font-size: 14px; font-weight: bold; color: #2c3e50;">📅 選擇天數：</span>
         <select id="daySelector" onchange="switchDay(this.value)">
-            <option value="w3_3" selected>第三週 Day 3：VIP預約與鑑賞室</option>
+            <option value="w3_4" selected>第三週 Day 4：限量新品與預購登記</option>
+            <option value="w3_3">第三週 Day 3：VIP預約與鑑賞室</option>
             <option value="valentine">🌹 情人節特別企劃</option>
             <option value="w3_2">第三週 Day 2：尋找尺寸與顏色</option>
             <option value="w3_1">第三週 Day 1：服飾試穿與更衣室</option>
@@ -321,31 +322,50 @@
 
 <script>
     const daysData = {
-        w3_3: {
-            title: "第三週 Day 3：VIP預約與鑑賞室 (VIP Room & Appointment)",
+        w3_4: {
+            title: "第三週 Day 4：限量新品與預購登記 (Limited Editions & Pre-orders)",
             words: [
-                { en: "Appointment", zh: "預約 / 約定" },
-                { en: "VIP room", zh: "VIP貴賓室 / 私密鑑賞室" },
-                { en: "Private", zh: "私密的 / 專屬的" },
-                { en: "Exclusive", zh: "獨家發售的 / 高級限量的" },
-                { en: "Collection", zh: "系列新品 / 收藏系列" },
-                { en: "Showcase", zh: "展示 / 陳列櫃" },
-                { en: "Schedule", zh: "安排時間 / 行程表" },
-                { en: "Confirm", zh: "確認" },
-                { en: "Service", zh: "服務" },
-                { en: "Enjoy", zh: "享受 / 欣賞" }
+                { en: "Limited edition", zh: "限量版 / 限量發行" },
+                { en: "Pre-order", zh: "預購 / 提前預訂" },
+                { en: "Waitlist", zh: "候位名單 / 候補名單" },
+                { en: "Release", zh: "發售 / 上市" },
+                { en: "Notify", zh: "通知 / 告知" },
+                { en: "Available", zh: "可買到的 / 有貨的" },
+                { en: "Reserve", zh: "保留 / 預訂" },
+                { en: "Deposit", zh: "訂金 / 保證金" },
+                { en: "Arrival", zh: "到貨 / 抵達" },
+                { en: "Contact", zh: "聯繫 / 聯絡方式" }
+            ],
+            formula: '"Is this a limited edition? Can I join the waitlist or place a pre-order?"',
+            formulaZh: "(這是限量版嗎？我可以加入候補名單或辦理預購嗎？)",
+            quizzes: [
+                { q: "1. 當你看到特別稀少、賣完就不再補貨的款式，稱為「限量版」，英文是？", opts: ["Limited edition", "Standard style", "Old version"], ans: 0 },
+                { q: "2. 如果商品目前還沒到貨，但你想先搶先預訂，這叫「預購」，英文是？", opts: ["Pre-order", "Refund", "Return"], ans: 0 },
+                { q: "3. 熱門商品現場賣完了，店員問你要不要留下聯絡方式排「候補名單」，這個名單叫？", opts: ["Waitlist", "Menu", "Bill"], ans: 0 },
+                { q: "4. 商品到貨時，希望店員「通知」你，英文動詞應該用？", opts: ["Notify", "Forget", "Close"], ans: 0 },
+                { q: "5. 預購或保留商品時，店員可能會跟你要一筆「訂金」，英文是？", opts: ["Deposit", "Tax", "Tip"], ans: 0 }
+            ],
+            answers: ['A', 'A', 'A', 'A', 'A'],
+            scenario: "你在店裡詢問一款心儀已久的包包是否為限量版，並表達如果現場沒有現貨，你想加入候補名單或預購。",
+            placeholder: "例如：Is this a limited edition? Can I join the waitlist or place a pre-order?"
+        },
+        w3_3: {
+            title: "第三週 Day 3：VIP預約與鑑賞室",
+            words: [
+                { en: "Appointment", zh: "預約" }, { en: "VIP room", zh: "貴賓室" }, { en: "Private", zh: "私密" }, { en: "Exclusive", zh: "限量獨家" }, { en: "Collection", zh: "系列新品" },
+                { en: "Showcase", zh: "展示" }, { en: "Schedule", zh: "安排" }, { en: "Confirm", zh: "確認" }, { en: "Service", zh: "服務" }, { en: "Enjoy", zh: "享受" }
             ],
             formula: '"I have an appointment to view the new collection in the VIP room."',
             formulaZh: "(我有預約在 VIP 室鑑賞最新系列新品。)",
             quizzes: [
-                { q: "1. 如果你提前跟銷售顧問約好時間去店裡，這個「預約」的英文單字是？", opts: ["Appointment", "Ticket", "Receipt"], ans: 0 },
-                { q: "2. 精品店內專門接待高級貴賓的私人空間，通常稱為？", opts: ["VIP room", "Public area", "Baggage claim"], ans: 0 },
-                { q: "3. 形容一件商品是「獨家、限量或高級會員專屬」的，英文常用哪個單字？", opts: ["Exclusive", "Cheap", "Common"], ans: 0 },
-                { q: "4. 設計師發表的一系列服飾或包款新品，英文稱作？", opts: ["Collection", "Menu", "Form"], ans: 0 },
-                { q: "5. 想表達「我有預約...」，開頭最標準的句型是？", opts: ["I have an appointment...", "I want to leave...", "Where is..."], ans: 0 }
+                { q: "1. 預約英文是：", opts: ["Appointment", "Ticket", "Receipt"], ans: 0 },
+                { q: "2. 私人鑑賞室是：", opts: ["VIP room", "Public area", "Baggage claim"], ans: 0 },
+                { q: "3. 獨家限量：", opts: ["Exclusive", "Cheap", "Common"], ans: 0 },
+                { q: "4. 系列新品：", opts: ["Collection", "Menu", "Form"], ans: 0 },
+                { q: "5. 預約句型開頭：", opts: ["I have an appointment...", "I want to leave...", "Where is..."], ans: 0 }
             ],
             answers: ['A', 'A', 'A', 'A', 'A'],
-            scenario: "抵達精品店時，請向接待人員表明你有預約，想前往 VIP 室鑑賞最新系列新品。",
+            scenario: "向接待人員表明你有預約 VIP 室鑑賞新品。",
             placeholder: "例如：I have an appointment to view the new collection in the VIP room."
         },
         valentine: {
@@ -357,18 +377,18 @@
             formula: '"Happy Valentine\'s Day! Let\'s enjoy our romantic dinner tonight."',
             formulaZh: "(情人節快樂！讓我們好好享受今晚的浪漫晚餐吧。)",
             quizzes: [
-                { q: "1. 形容情人節很浪漫用：", opts: ["Romantic", "Scary", "Boring"], ans: 0 },
-                { q: "2. 禮物英文是：", opts: ["Gift / Present", "Bill", "Garbage"], ans: 0 },
-                { q: "3. 晚餐約會是：", opts: ["Dinner date", "Business meeting", "Airport customs"], ans: 0 },
-                { q: "4. 陪伴彼此用：", opts: ["being together", "leaving", "money"], ans: 0 },
-                { q: "5. 情人節快樂祝福：", opts: ["Happy Valentine's Day!", "Happy New Year!", "Good morning!"], ans: 0 }
+                { q: "1. 浪漫用：", opts: ["Romantic", "Scary", "Boring"], ans: 0 },
+                { q: "2. 禮物：", opts: ["Gift / Present", "Bill", "Garbage"], ans: 0 },
+                { q: "3. 晚餐約會：", opts: ["Dinner date", "Business meeting", "Airport customs"], ans: 0 },
+                { q: "4. 陪伴彼此：", opts: ["being together", "leaving", "money"], ans: 0 },
+                { q: "5. 祝福語：", opts: ["Happy Valentine's Day!", "Happy New Year!", "Good morning!"], ans: 0 }
             ],
             answers: ['A', 'A', 'A', 'A', 'A'],
             scenario: "寫下一句情人節祝福或約會邀請英文句子。",
             placeholder: "例如：Happy Valentine's Day! Let's enjoy our romantic dinner."
         },
         w3_2: {
-            title: "第三週 Day 2：尋找尺寸與顏色 (Sizes & Colors)",
+            title: "第三週 Day 2：尋找尺寸與顏色",
             words: [
                 { en: "Small / Medium / Large", zh: "小/中/大號" }, { en: "In stock", zh: "有現貨" }, { en: "Out of stock", zh: "缺貨" }, { en: "Check", zh: "查看" }, { en: "Backroom", zh: "倉庫" },
                 { en: "Small size", zh: "小尺寸" }, { en: "Large size", zh: "大尺寸" }, { en: "Different", zh: "不同的" }, { en: "Look for", zh: "尋找" }, { en: "Available", zh: "可買到的" }
@@ -376,14 +396,14 @@
             formula: '"Do you have this in a medium size? Or do you have it in black?"',
             formulaZh: "(請問這件有中號的嗎？或者有黑色的嗎？)",
             quizzes: [
-                { q: "1. 問「有現貨嗎？」說：", opts: ["in stock", "out of stock", "on sale"], ans: 0 },
-                { q: "2. 店員去後面找找是去：", opts: ["backroom", "kitchen", "airport"], ans: 0 },
-                { q: "3. 「out of stock」代表：", opts: ["特價", "缺貨 / 賣完了", "新到貨"], ans: 1 },
-                { q: "4. 中號英文簡稱：", opts: ["S", "M", "L"], ans: 1 },
-                { q: "5. 「Look for」意思是：", opts: ["尋找", "放棄", "忘記"], ans: 0 }
+                { q: "1. 有現貨：", opts: ["in stock", "out of stock", "on sale"], ans: 0 },
+                { q: "2. 倉庫：", opts: ["backroom", "kitchen", "airport"], ans: 0 },
+                { q: "3. 缺貨：", opts: ["特價", "缺貨 / 賣完了", "新到貨"], ans: 1 },
+                { q: "4. 中號簡稱：", opts: ["S", "M", "L"], ans: 1 },
+                { q: "5. 尋找：", opts: ["Look for", "Forget", "Leave"], ans: 0 }
             ],
             answers: ['A', 'A', 'B', 'B', 'A'],
-            scenario: "向店員詢問是否有中號或黑色的商品。",
+            scenario: "詢問是否有中號或黑色的商品。",
             placeholder: "例如：Do you have this in a medium size? Or do you have it in black?"
         },
         w3_1: {
@@ -395,11 +415,11 @@
             formula: '"Where is the fitting room? I would like to try this on."',
             formulaZh: "(請問試衣間在哪裡？我想試穿這件。)",
             quizzes: [
-                { q: "1. 問試衣間在哪：", opts: ["Fitting room", "Baggage claim", "Minibar"], ans: 0 },
-                { q: "2. 穿起來太緊用：", opts: ["Loose", "Tight", "Clean"], ans: 1 },
-                { q: "3. 決定買下說：", opts: ["take it", "drop it", "lose it"], ans: 0 },
-                { q: "4. 問合不合身用：", opts: ["Fit", "Bill", "Form"], ans: 0 },
-                { q: "5. 稱讚好看用：", opts: ["Look bad", "Look good", "Look small"], ans: 1 }
+                { q: "1. 試衣間：", opts: ["Fitting room", "Baggage claim", "Minibar"], ans: 0 },
+                { q: "2. 太緊：", opts: ["Loose", "Tight", "Clean"], ans: 1 },
+                { q: "3. 買下：", opts: ["take it", "drop it", "lose it"], ans: 0 },
+                { q: "4. 合身：", opts: ["Fit", "Bill", "Form"], ans: 0 },
+                { q: "5. 好看：", opts: ["Look bad", "Look good", "Look small"], ans: 1 }
             ],
             answers: ['A', 'B', 'A', 'A', 'B'],
             scenario: "詢問試衣間位置並試穿。",
@@ -416,9 +436,9 @@
             quizzes: [
                 { q: "1. 問價格：", opts: ["How much is this?", "Where is airport?", "What is your name?"], ans: 0 },
                 { q: "2. 問其他顏色：", opts: ["Do you have it in another color?", "Can I eat this?", "Is it free?"], ans: 0 },
-                { q: "3. 餐廳菜單：", opts: ["Menu", "Bill", "Receipt"], ans: 0 },
-                { q: "4. 準備點餐：", opts: ["sleep", "order", "leave"], ans: 1 },
-                { q: "5. 付款動詞：", opts: ["Pay", "Play", "Stay"], ans: 0 }
+                { q: "3. 菜單：", opts: ["Menu", "Bill", "Receipt"], ans: 0 },
+                { q: "4. 點餐：", opts: ["sleep", "order", "leave"], ans: 1 },
+                { q: "5. 付款：", opts: ["Pay", "Play", "Stay"], ans: 0 }
             ],
             answers: ['A', 'A', 'A', 'B', 'A'],
             scenario: "問價格或點餐。",
@@ -471,11 +491,11 @@
             formula: '"I am looking for Oran sandals in goatskin, and I\'d like to inquire about silk scarves."',
             formulaZh: "(我正在尋找羊皮 Oran 拖鞋，同時也想詢問絲巾。)",
             quizzes: [
-                { q: "1. Quota 是指：", opts: ["折扣", "熱門包款配額限制", "退稅"], ans: 1 },
-                { q: "2. 庫存現貨：", opts: ["Availability", "Pre-spend", "Discount"], ans: 0 },
+                { q: "1. Quota：", opts: ["折扣", "熱門包款配額限制", "退稅"], ans: 1 },
+                { q: "2. 庫存：", opts: ["Availability", "Pre-spend", "Discount"], ans: 0 },
                 { q: "3. 羊皮：", opts: ["Epsom", "Goatskin / Chevre", "Canvas"], ans: 1 },
                 { q: "4. 清單：", opts: ["Wishlist", "Receipt", "Invoice"], ans: 0 },
-                { q: "5. Inquire about：", opts: ["抱怨", "詢問 / 打聽關于...", "退貨"], ans: 1 }
+                { q: "5. Inquire about：", opts: ["抱怨", "詢問 / 打聽關於...", "退貨"], ans: 1 }
             ],
             answers: ['B', 'A', 'B', 'A', 'B'],
             scenario: "向愛馬仕 SA 詢問羊皮拖鞋與絲巾。",
@@ -665,8 +685,8 @@
         renderDay(dayVal);
     }
 
-    // 初始化渲染第三週 Day 3
-    renderDay('w3_3');
+    // 初始化渲染第三週 Day 4
+    renderDay('w3_4');
 
     function gradeAndPreview(dayKey) {
         const data = daysData[dayKey];
@@ -725,7 +745,7 @@
             • 連續打卡：<b>第 ${finalStreak} 天</b><br>
             • 你的練習內容：<br><span style="color: #2980b9; font-style: italic;">"${answerText}"</span><br>
             <hr style="border:0; border-top:1px solid #ccc; margin:8px 0;">
-            ✨ 老師評語：VIP 預約與鑑賞的英文表達非常高級且道地！點擊下方按鈕即可正式打卡。
+            ✨ 老師評語：限量預購與候補名單的表達非常道地流暢！點擊下方按鈕即可正式打卡。
         `;
 
         const lineMessage = `【Ava 英文打卡 🌟 ${data.title}】\n🔥 連續打卡：第 ${finalStreak} 天\n🎯 選擇題得分：${finalScore} 分\n✍️ 造句練習：\n${answerText}`;
@@ -760,7 +780,7 @@
 
         updateStreakAndReward();
 
-        let rewardText = currentStreak >= 5 ? "<br>🎁 <b>🎁 恭喜解鎖實體心願：衣服一件！</b>" : `<br>距離解鎖衣服還差 ${5 - (currentStreak % 5 === 0 ? 5 : currentStreak % 5)} 天！`;
+        let rewardText = currentStreak >= 5 ? "<br>🎁 <b>恭喜解鎖實體心願：衣服一件！</b>" : `<br>距離解鎖衣服還差 ${5 - (currentStreak % 5 === 0 ? 5 : currentStreak % 5)} 天！`;
         document.getElementById('modalText').innerHTML = `單元完成！得分 <b>${finalScore} 分</b><br>🔥 連續打卡 <b>${currentStreak} 天</b>！${rewardText}`;
         document.getElementById('successModal').style.display = 'flex';
     }
